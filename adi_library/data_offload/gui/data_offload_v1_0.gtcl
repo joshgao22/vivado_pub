@@ -1,0 +1,2 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_DST_CYCLIC_EN_ENABLEMENT {TX_OR_RXN_PATH } {expr $TX_OR_RXN_PATH == 1}

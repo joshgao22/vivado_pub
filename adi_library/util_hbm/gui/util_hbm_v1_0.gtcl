@@ -1,0 +1,4 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_HBM_SEGMENTS_PER_MASTER_VALUE {LENGTH_WIDTH NUM_M } {expr  int(ceil(2**($LENGTH_WIDTH-28) / ${NUM_M}.0)) }
+proc gen_USERPARAMETER_HBM_SEGMENT_INDEX_ENABLEMENT {MEM_TYPE } {expr $MEM_TYPE == 2}
+proc gen_USERPARAMETER_DDR_BASE_ADDDRESS_ENABLEMENT {MEM_TYPE } {expr $MEM_TYPE == 1}

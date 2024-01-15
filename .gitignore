@@ -1,0 +1,104 @@
+################################################################################
+########################## Basic Directory Structure ###########################
+################################################################################
+
+# everything
+*
+
+# exclude the directory structure
+!/adi_library/
+!/adi_library/**/*
+!/common/
+!/common/**/*
+!/custom_ips/
+!/custom_ips/**/*
+!/modules/
+!/modules/**/
+!/projects/
+!/projects/**/
+!/.gitattributes
+!/.gitignore
+!/README.md
+
+################################################################################
+############################# Vivado & SDK Common ##############################
+################################################################################
+
+# folders (and all of their contents) that should always be ignored, anywhere
+# in the repo
+.Xil/
+
+# file patterns that should always be ignored (journal files, log files, dump
+# files that are created upon Vivado/SDK errors)
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+*.upgrade_log
+*.dmp
+*.debug
+vivado_pid*
+*~
+
+# vivado workspace files
+xsim.dir/
+xvlog.pb
+
+################################################################################
+############################### Vivado Specific ################################
+################################################################################
+
+# exclude
+.metadata
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/**/*
+*.sim/
+
+# include xpr
+!*.xpr
+
+# include design source
+!**/*.srcs/**/*
+
+# include design run results
+!*.runs/impl_*/*.bit
+!*.runs/impl_*/*.ltx
+
+################################################################################
+################################# SDK Specific #################################
+################################################################################
+
+# include sdk directory and everything in it
+!*.sdk/
+!*.sdk/**
+*.sdk/**.log
+
+# exclude some obscure hidden SDK folders
+*.sdk/.metadata/
+*.sdk/.sdk/
+*.sdk/RemoteSystemsTempFiles/
+*.sdk/webtalk/
+
+# hw_platform: exclude the entire hw_platform folder, as everything can be
+# generated from the .hdf file. Make sure to include the bitstream in the .hdf
+# file when exporting from Vivado!
+*.sdk/*_hw_platform_*/
+
+# BSP: only keep `.cproject`, `.project`, `.sdkproject`, `.system.mss` and
+# Makefile, ps lib files are regenerated automatically
+*.sdk/*_bsp/*
+!*.sdk/*_bsp/*.cproject
+!*.sdk/*_bsp/*.project
+!*.sdk/*_bsp/*.sdkproject
+!*.sdk/*_bsp/system.mss
+!*.sdk/*_bsp/Makefile
+
+# Application: ignored file patterns, exclude Debug & Release folders
+*.sdk/**/*.o
+*.sdk/**/*.d
+*.sdk/**/*.a
+*.sdk/*/Debug/
+*.sdk/*/Release/

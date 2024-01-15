@@ -1,0 +1,2 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_POLARITY_MASK_ENABLEMENT {OUTPUT_MODE } {expr $OUTPUT_MODE == 0}
