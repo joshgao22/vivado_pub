@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="ax7020_spi" location="/home/josh/Workspace/vivado/vivado_pub/projects/ax7020/ax7020_spi_loopback/vitis/ax7020_spi" platform="/home/josh/Workspace/vivado/vivado_pub/projects/ax7020/ax7020_spi_loopback/vitis/ax7020_platform/export/ax7020_platform/ax7020_platform.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="ax7020_spi_system" sysConfig="ax7020_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="45371d9d5d24925e4858faef1c0cc91d">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.648805660">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.88311094" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
