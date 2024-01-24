@@ -20,8 +20,78 @@
 !/.gitignore
 !/README.md
 
+
 ################################################################################
-############################# Vivado & SDK Common ##############################
+############################### Vivado Specific ################################
+################################################################################
+
+# exclude
+.metadata
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/**/*
+*.sim/
+
+# include xpr
+!*.xpr
+
+# include hardware (Xilinx support archive) file
+!/projects/*/*/*.xsa
+!/projects/*/*/*.md
+
+# include board preset tcl (be careful about the path)
+!/projects/*/*.tcl
+
+# include design source
+!**/*.srcs/**/*
+
+# include design run results
+!**/*.runs/impl_*/*.bit
+!**/*.runs/impl_*/*.ltx
+
+
+################################################################################
+################################ Vitis Specific ################################
+################################################################################
+
+# include sdk directory and everything in it
+!/projects/*/*/vitis/
+!/projects/*/*/vitis/**
+/projects/*/*/vitis/**.log
+/projects/*/*/vitis/.analytics
+
+# exclude some obscure hidden SDK folders
+/projects/*/*/vitis/.metadata/
+/projects/*/*/vitis/.sdk/
+/projects/*/*/vitis/RemoteSystemsTempFiles/
+/projects/*/*/vitis/webtalk/
+
+# hw_platform: exclude the entire hw_platform folder, as everything can be
+# generated from the .hdf file. Make sure to include the bitstream in the .hdf
+# file when exporting from Vivado!
+/projects/*/*/vitis/*_hw_platform_*/
+
+# BSP: only keep `.cproject`, `.project`, `.sdkproject`, `.system.mss` and
+# Makefile, ps lib files are regenerated automatically
+/projects/*/*/vitis/*_bsp/*
+!/projects/*/*/vitis/*_bsp/*.cproject
+!/projects/*/*/vitis/*_bsp/*.project
+!/projects/*/*/vitis/*_bsp/*.sdkproject
+!/projects/*/*/vitis/*_bsp/system.mss
+!/projects/*/*/vitis/*_bsp/Makefile
+
+# Application: ignored file patterns, exclude Debug & Release folders
+/projects/*/*/vitis/**/*.o
+/projects/*/*/vitis/**/*.d
+/projects/*/*/vitis/**/*.a
+/projects/*/*/vitis/*/Debug/
+/projects/*/*/vitis/*/Release/
+
+
+################################################################################
+############################ Vivado & Vitis Common #############################
 ################################################################################
 
 # folders (and all of their contents) that should always be ignored, anywhere
@@ -43,62 +113,3 @@ vivado_pid*
 # vivado workspace files
 xsim.dir/
 xvlog.pb
-
-################################################################################
-############################### Vivado Specific ################################
-################################################################################
-
-# exclude
-.metadata
-*.cache/
-*.gen/
-*.hw/
-*.ip_user_files/
-*.runs/**/*
-*.sim/
-
-# include xpr
-!*.xpr
-
-# include design source
-!**/*.srcs/**/*
-
-# include design run results
-!*.runs/impl_*/*.bit
-!*.runs/impl_*/*.ltx
-
-################################################################################
-################################# SDK Specific #################################
-################################################################################
-
-# include sdk directory and everything in it
-!*.sdk/
-!*.sdk/**
-*.sdk/**.log
-
-# exclude some obscure hidden SDK folders
-*.sdk/.metadata/
-*.sdk/.sdk/
-*.sdk/RemoteSystemsTempFiles/
-*.sdk/webtalk/
-
-# hw_platform: exclude the entire hw_platform folder, as everything can be
-# generated from the .hdf file. Make sure to include the bitstream in the .hdf
-# file when exporting from Vivado!
-*.sdk/*_hw_platform_*/
-
-# BSP: only keep `.cproject`, `.project`, `.sdkproject`, `.system.mss` and
-# Makefile, ps lib files are regenerated automatically
-*.sdk/*_bsp/*
-!*.sdk/*_bsp/*.cproject
-!*.sdk/*_bsp/*.project
-!*.sdk/*_bsp/*.sdkproject
-!*.sdk/*_bsp/system.mss
-!*.sdk/*_bsp/Makefile
-
-# Application: ignored file patterns, exclude Debug & Release folders
-*.sdk/**/*.o
-*.sdk/**/*.d
-*.sdk/**/*.a
-*.sdk/*/Debug/
-*.sdk/*/Release/
