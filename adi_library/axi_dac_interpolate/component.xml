@@ -279,7 +279,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5150ad67</spirit:value>
+            <spirit:value>ccc66952</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -295,7 +295,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1edce4b6</spirit:value>
+            <spirit:value>68c323f6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1005,7 +1005,7 @@
       <spirit:file>
         <spirit:name>axi_dac_interpolate.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_c33a1894</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a7ae538e</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1107,11 +1107,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/axi_dac_interpolate</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:45:32Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:01:38Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="431187fa"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3a2db16c"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2518ea2b"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="170edd38"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f71969a3"/>

@@ -257,7 +257,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>17b5e71c</spirit:value>
+            <spirit:value>c0944db9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -273,7 +273,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b0e420e2</spirit:value>
+            <spirit:value>b16a94ea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1000,7 +1000,7 @@
       <spirit:file>
         <spirit:name>axi_clock_monitor.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3b1ac4a2</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7a2faf0d</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1083,11 +1083,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/axi_clock_monitor</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:45:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:01:25Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c6e366c8"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1e4179a7"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="164310c9"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e8384fdb"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="ce8ad7eb"/>

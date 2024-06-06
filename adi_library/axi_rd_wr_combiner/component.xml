@@ -593,7 +593,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e6333660</spirit:value>
+            <spirit:value>48eca2d4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -609,7 +609,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e6333660</spirit:value>
+            <spirit:value>48eca2d4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1621,7 +1621,7 @@
       <spirit:file>
         <spirit:name>axi_rd_wr_combiner.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e6333660</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_48eca2d4</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1686,12 +1686,12 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.analog.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:48:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:05:31Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="5ce56fea"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c3b1219c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5e2c0dc8"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="577bb2da"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="6c9e051b"/>
     </xilinx:packagingInfo>

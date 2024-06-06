@@ -13,7 +13,7 @@
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_READY</spirit:name>
+            <spirit:name>cmd_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>cmd_ready</spirit:name>
@@ -21,7 +21,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_VALID</spirit:name>
+            <spirit:name>cmd_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>cmd_valid</spirit:name>
@@ -29,7 +29,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_DATA</spirit:name>
+            <spirit:name>cmd_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>cmd</spirit:name>
@@ -37,7 +37,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_READY</spirit:name>
+            <spirit:name>sdo_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdo_data_ready</spirit:name>
@@ -45,7 +45,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_VALID</spirit:name>
+            <spirit:name>sdo_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdo_data_valid</spirit:name>
@@ -53,7 +53,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_DATA</spirit:name>
+            <spirit:name>sdo_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdo_data</spirit:name>
@@ -61,7 +61,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_READY</spirit:name>
+            <spirit:name>sdi_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdi_data_ready</spirit:name>
@@ -69,7 +69,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_VALID</spirit:name>
+            <spirit:name>sdi_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdi_data_valid</spirit:name>
@@ -77,7 +77,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_DATA</spirit:name>
+            <spirit:name>sdi_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sdi_data</spirit:name>
@@ -85,7 +85,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_READY</spirit:name>
+            <spirit:name>sync_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sync_ready</spirit:name>
@@ -93,7 +93,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_VALID</spirit:name>
+            <spirit:name>sync_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sync_valid</spirit:name>
@@ -101,7 +101,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_DATA</spirit:name>
+            <spirit:name>sync_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>sync_data</spirit:name>
@@ -117,7 +117,7 @@
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_WR_EN</spirit:name>
+            <spirit:name>cmd_wr_en</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_cmd_wr_en</spirit:name>
@@ -125,7 +125,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_WR_DATA</spirit:name>
+            <spirit:name>cmd_wr_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_cmd_wr_data</spirit:name>
@@ -133,7 +133,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_WR_EN</spirit:name>
+            <spirit:name>sdo_wr_en</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_sdo_wr_en</spirit:name>
@@ -141,7 +141,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_WR_DATA</spirit:name>
+            <spirit:name>sdo_wr_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_sdo_wr_data</spirit:name>
@@ -149,7 +149,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>ENABLE</spirit:name>
+            <spirit:name>enable</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_enable</spirit:name>
@@ -157,7 +157,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>ENABLED</spirit:name>
+            <spirit:name>enabled</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_enabled</spirit:name>
@@ -165,7 +165,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>MEM_RESET</spirit:name>
+            <spirit:name>mem_reset</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>ctrl_mem_reset</spirit:name>
@@ -173,7 +173,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_READY</spirit:name>
+            <spirit:name>sync_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>status_sync_ready</spirit:name>
@@ -181,7 +181,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_VALID</spirit:name>
+            <spirit:name>sync_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>status_sync_valid</spirit:name>
@@ -189,7 +189,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_DATA</spirit:name>
+            <spirit:name>sync_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>status_sync_data</spirit:name>
@@ -320,7 +320,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>54da56d5</spirit:value>
+            <spirit:value>415947b9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -339,7 +339,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>54da56d5</spirit:value>
+            <spirit:value>415947b9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -842,7 +842,7 @@
       <spirit:file>
         <spirit:name>spi_engine_offload.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_54da56d5</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_415947b9</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -941,11 +941,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/peripherals/spi_engine/offload</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:53:04Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:10:45Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8689cb20"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="582124d3"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2756ddd5"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ae1a9eae"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="e2e1ec4a"/>

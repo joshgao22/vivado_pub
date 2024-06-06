@@ -241,7 +241,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9d552b9e</spirit:value>
+            <spirit:value>502399df</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -257,7 +257,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d3400fb9</spirit:value>
+            <spirit:value>07cb76b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -893,30 +893,6 @@
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_pairs_00ecfe9a</spirit:name>
-      <spirit:enumeration spirit:text="Unknown">0</spirit:enumeration>
-      <spirit:enumeration spirit:text="rf">1</spirit:enumeration>
-      <spirit:enumeration spirit:text="fl">2</spirit:enumeration>
-      <spirit:enumeration spirit:text="ff">3</spirit:enumeration>
-      <spirit:enumeration spirit:text="fb">4</spirit:enumeration>
-      <spirit:enumeration spirit:text="hc">5</spirit:enumeration>
-      <spirit:enumeration spirit:text="fh">6</spirit:enumeration>
-      <spirit:enumeration spirit:text="cs">7</spirit:enumeration>
-      <spirit:enumeration spirit:text="cp">8</spirit:enumeration>
-      <spirit:enumeration spirit:text="ft">9</spirit:enumeration>
-      <spirit:enumeration spirit:text="fg">10</spirit:enumeration>
-      <spirit:enumeration spirit:text="sb">11</spirit:enumeration>
-      <spirit:enumeration spirit:text="rb">12</spirit:enumeration>
-      <spirit:enumeration spirit:text="rs">13</spirit:enumeration>
-      <spirit:enumeration spirit:text="cl">14</spirit:enumeration>
-      <spirit:enumeration spirit:text="sf">15</spirit:enumeration>
-      <spirit:enumeration spirit:text="ba">16</spirit:enumeration>
-      <spirit:enumeration spirit:text="fa">17</spirit:enumeration>
-      <spirit:enumeration spirit:text="fs">18</spirit:enumeration>
-      <spirit:enumeration spirit:text="fi">19</spirit:enumeration>
-      <spirit:enumeration spirit:text="vs">20</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_pairs_19f99f31</spirit:name>
       <spirit:enumeration spirit:text="Unknown">0</spirit:enumeration>
       <spirit:enumeration spirit:text="-1">10</spirit:enumeration>
@@ -941,7 +917,32 @@
       <spirit:enumeration spirit:text="versal">4</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_pairs_fc01a186</spirit:name>
+      <spirit:name>choice_pairs_a6e6e044</spirit:name>
+      <spirit:enumeration spirit:text="Unknown">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="rf">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="fl">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="ff">3</spirit:enumeration>
+      <spirit:enumeration spirit:text="fb">4</spirit:enumeration>
+      <spirit:enumeration spirit:text="hc">5</spirit:enumeration>
+      <spirit:enumeration spirit:text="fh">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="cs">7</spirit:enumeration>
+      <spirit:enumeration spirit:text="cp">8</spirit:enumeration>
+      <spirit:enumeration spirit:text="ft">9</spirit:enumeration>
+      <spirit:enumeration spirit:text="fg">10</spirit:enumeration>
+      <spirit:enumeration spirit:text="sb">11</spirit:enumeration>
+      <spirit:enumeration spirit:text="rb">12</spirit:enumeration>
+      <spirit:enumeration spirit:text="rs">13</spirit:enumeration>
+      <spirit:enumeration spirit:text="cl">14</spirit:enumeration>
+      <spirit:enumeration spirit:text="sf">15</spirit:enumeration>
+      <spirit:enumeration spirit:text="ba">16</spirit:enumeration>
+      <spirit:enumeration spirit:text="fa">17</spirit:enumeration>
+      <spirit:enumeration spirit:text="fs">18</spirit:enumeration>
+      <spirit:enumeration spirit:text="fi">19</spirit:enumeration>
+      <spirit:enumeration spirit:text="vs">20</spirit:enumeration>
+      <spirit:enumeration spirit:text="ls">21</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_a897e79d</spirit:name>
       <spirit:enumeration spirit:text="Unknown">0</spirit:enumeration>
       <spirit:enumeration spirit:text="artix">1</spirit:enumeration>
       <spirit:enumeration spirit:text="kintex">2</spirit:enumeration>
@@ -949,6 +950,7 @@
       <spirit:enumeration spirit:text="zynq">4</spirit:enumeration>
       <spirit:enumeration spirit:text="versalprime">5</spirit:enumeration>
       <spirit:enumeration spirit:text="versalaicore">6</spirit:enumeration>
+      <spirit:enumeration spirit:text="versalpremium">7</spirit:enumeration>
     </spirit:choice>
   </spirit:choices>
   <spirit:fileSets>
@@ -1029,7 +1031,7 @@
       <spirit:file>
         <spirit:name>axi_ad9671.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_8448a1fc</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_68264b06</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1127,7 +1129,7 @@
     <spirit:parameter>
       <spirit:name>FPGA_FAMILY</spirit:name>
       <spirit:displayName>Fpga Family</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FPGA_FAMILY" spirit:choiceRef="choice_pairs_fc01a186">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FPGA_FAMILY" spirit:choiceRef="choice_pairs_a897e79d">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SPEED_GRADE</spirit:name>
@@ -1137,7 +1139,7 @@
     <spirit:parameter>
       <spirit:name>DEV_PACKAGE</spirit:name>
       <spirit:displayName>Dev Package</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DEV_PACKAGE" spirit:choiceRef="choice_pairs_00ecfe9a">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DEV_PACKAGE" spirit:choiceRef="choice_pairs_a6e6e044">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>QUAD_OR_DUAL_N</spirit:name>
@@ -1187,11 +1189,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/axi_ad9671</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:42:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T02:58:08Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fcaaa44c"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d6713915"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="b25aeb89"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ab8069cd"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cae3341b"/>

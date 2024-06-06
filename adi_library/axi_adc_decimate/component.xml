@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8aeba977</spirit:value>
+            <spirit:value>eb88bad4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -301,7 +301,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5bbf0b8c</spirit:value>
+            <spirit:value>ebd17759</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -906,7 +906,7 @@
       <spirit:file>
         <spirit:name>axi_adc_decimate.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_7d514d91</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_6adb0784</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1036,11 +1036,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/axi_adc_decimate</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:44:17Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:00:16Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c81c764b"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="cdc38f4a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="7dbf59e4"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="170edd38"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f306e57c"/>

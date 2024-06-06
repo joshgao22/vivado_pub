@@ -1,6 +1,6 @@
 // ***************************************************************************
 // ***************************************************************************
-// Copyright (C) 2023 Analog Devices, Inc. All rights reserved.
+// Copyright (C) 2023-2024 Analog Devices, Inc. All rights reserved.
 //
 // In this HDL repository, there are many different and unique modules, consisting
 // of various HDL (Verilog or VHDL) components. The individual modules are
@@ -26,7 +26,7 @@
 //
 //   2. An ADI specific BSD license, which can be found in the top level directory
 //      of this repository (LICENSE_ADIBSD), and also on-line at:
-//      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+//      https://github.com/analogdevicesinc/hdl/blob/main/LICENSE_ADIBSD
 //      This will allow to generate bit files and not release the source code,
 //      as long as it attaches to an ADI device.
 //
@@ -43,7 +43,9 @@ module dmac_sg #(
   parameter BYTES_PER_BEAT_WIDTH_DEST = 3,
   parameter BYTES_PER_BEAT_WIDTH_SRC = 3,
   parameter BYTES_PER_BEAT_WIDTH_SG = 3,
-  parameter ASYNC_CLK_REQ_SG = 1
+  parameter ASYNC_CLK_REQ_SG = 1,
+  parameter [3:0] AXI_AXCACHE = 4'b0011,
+  parameter [2:0] AXI_AXPROT = 3'b000
 ) (
   input req_clk,
   input req_resetn,
@@ -147,8 +149,8 @@ module dmac_sg #(
 
   assign m_axi_arsize  = 3'h3;
   assign m_axi_arburst = 2'h1;
-  assign m_axi_arprot  = 3'h0;
-  assign m_axi_arcache = 4'h3;
+  assign m_axi_arprot  = AXI_AXPROT;
+  assign m_axi_arcache = AXI_AXCACHE;
   assign m_axi_arlen   = 'h5;
   assign m_axi_araddr  = {next_desc_addr, {BYTES_PER_BEAT_WIDTH_SG{1'b0}}};
 

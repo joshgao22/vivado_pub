@@ -1,6 +1,6 @@
 // ***************************************************************************
 // ***************************************************************************
-// Copyright (C) 2014-2023 Analog Devices, Inc. All rights reserved.
+// Copyright (C) 2014-2024 Analog Devices, Inc. All rights reserved.
 //
 // In this HDL repository, there are many different and unique modules, consisting
 // of various HDL (Verilog or VHDL) components. The individual modules are
@@ -26,7 +26,7 @@
 //
 //   2. An ADI specific BSD license, which can be found in the top level directory
 //      of this repository (LICENSE_ADIBSD), and also on-line at:
-//      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+//      https://github.com/analogdevicesinc/hdl/blob/main/LICENSE_ADIBSD
 //      This will allow to generate bit files and not release the source code,
 //      as long as it attaches to an ADI device.
 //
@@ -43,7 +43,8 @@ module address_generator #(
   parameter BEATS_PER_BURST_WIDTH = 4,
   parameter BYTES_PER_BEAT_WIDTH = $clog2(DMA_DATA_WIDTH/8),
   parameter LENGTH_WIDTH = 8,
-  parameter CACHE_COHERENT = 0
+  parameter [3:0] AXI_AXCACHE = 4'b0011,
+  parameter [2:0] AXI_AXPROT = 3'b000
 ) (
   input                        clk,
   input                        resetn,
@@ -80,10 +81,8 @@ module address_generator #(
 `include "inc_id.vh"
 
   assign burst = 2'b01;
-  assign prot = 3'b000;
-  // If CACHE_COHERENT is set, signal downstream that this transaction must be
-  // looked up in cache. Otherwise default to "normal non-cachable bufferable".
-  assign cache = CACHE_COHERENT ? 4'b1110 : 4'b0011;
+  assign prot = AXI_AXPROT;
+  assign cache = AXI_AXCACHE;
   assign size = DMA_DATA_WIDTH == 1024 ? 3'b111 :
                 DMA_DATA_WIDTH ==  512 ? 3'b110 :
                 DMA_DATA_WIDTH ==  256 ? 3'b101 :

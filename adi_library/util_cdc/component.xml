@@ -18,7 +18,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b5f3c2f0</spirit:value>
+            <spirit:value>c325f2fc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -34,7 +34,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b5f3c2f0</spirit:value>
+            <spirit:value>c325f2fc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -146,7 +146,7 @@
       <spirit:file>
         <spirit:name>sync_event.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_afcd7b7e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_fece0fbd</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -234,11 +234,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.analog.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:38:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T02:53:53Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ca7ebdc2"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="977245ef"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="c5b57d4d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="1f4d93c9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c38123f1"/>

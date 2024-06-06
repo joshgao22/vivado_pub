@@ -13,7 +13,7 @@
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_READY</spirit:name>
+            <spirit:name>cmd_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_cmd_ready</spirit:name>
@@ -21,7 +21,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_VALID</spirit:name>
+            <spirit:name>cmd_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_cmd_valid</spirit:name>
@@ -29,7 +29,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_DATA</spirit:name>
+            <spirit:name>cmd_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_cmd_data</spirit:name>
@@ -37,7 +37,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_READY</spirit:name>
+            <spirit:name>sdo_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdo_ready</spirit:name>
@@ -45,7 +45,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_VALID</spirit:name>
+            <spirit:name>sdo_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdo_valid</spirit:name>
@@ -53,7 +53,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_DATA</spirit:name>
+            <spirit:name>sdo_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdo_data</spirit:name>
@@ -61,7 +61,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_READY</spirit:name>
+            <spirit:name>sdi_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdi_ready</spirit:name>
@@ -69,7 +69,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_VALID</spirit:name>
+            <spirit:name>sdi_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdi_valid</spirit:name>
@@ -77,7 +77,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_DATA</spirit:name>
+            <spirit:name>sdi_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sdi_data</spirit:name>
@@ -85,7 +85,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_READY</spirit:name>
+            <spirit:name>sync_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sync_ready</spirit:name>
@@ -93,7 +93,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_VALID</spirit:name>
+            <spirit:name>sync_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sync_valid</spirit:name>
@@ -101,7 +101,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_DATA</spirit:name>
+            <spirit:name>sync_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m_sync</spirit:name>
@@ -167,7 +167,7 @@
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_READY</spirit:name>
+            <spirit:name>cmd_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_cmd_ready</spirit:name>
@@ -175,7 +175,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_VALID</spirit:name>
+            <spirit:name>cmd_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_cmd_valid</spirit:name>
@@ -183,7 +183,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_DATA</spirit:name>
+            <spirit:name>cmd_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_cmd_data</spirit:name>
@@ -191,7 +191,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_READY</spirit:name>
+            <spirit:name>sdo_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdo_ready</spirit:name>
@@ -199,7 +199,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_VALID</spirit:name>
+            <spirit:name>sdo_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdo_valid</spirit:name>
@@ -207,7 +207,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_DATA</spirit:name>
+            <spirit:name>sdo_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdo_data</spirit:name>
@@ -215,7 +215,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_READY</spirit:name>
+            <spirit:name>sdi_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdi_ready</spirit:name>
@@ -223,7 +223,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_VALID</spirit:name>
+            <spirit:name>sdi_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdi_valid</spirit:name>
@@ -231,7 +231,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_DATA</spirit:name>
+            <spirit:name>sdi_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sdi_data</spirit:name>
@@ -239,7 +239,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_READY</spirit:name>
+            <spirit:name>sync_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sync_ready</spirit:name>
@@ -247,7 +247,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_VALID</spirit:name>
+            <spirit:name>sync_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sync_valid</spirit:name>
@@ -255,7 +255,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_DATA</spirit:name>
+            <spirit:name>sync_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s0_sync</spirit:name>
@@ -321,7 +321,7 @@
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_READY</spirit:name>
+            <spirit:name>cmd_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_cmd_ready</spirit:name>
@@ -329,7 +329,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_VALID</spirit:name>
+            <spirit:name>cmd_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_cmd_valid</spirit:name>
@@ -337,7 +337,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>CMD_DATA</spirit:name>
+            <spirit:name>cmd_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_cmd_data</spirit:name>
@@ -345,7 +345,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_READY</spirit:name>
+            <spirit:name>sdo_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdo_ready</spirit:name>
@@ -353,7 +353,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_VALID</spirit:name>
+            <spirit:name>sdo_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdo_valid</spirit:name>
@@ -361,7 +361,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDO_DATA</spirit:name>
+            <spirit:name>sdo_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdo_data</spirit:name>
@@ -369,7 +369,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_READY</spirit:name>
+            <spirit:name>sdi_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdi_ready</spirit:name>
@@ -377,7 +377,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_VALID</spirit:name>
+            <spirit:name>sdi_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdi_valid</spirit:name>
@@ -385,7 +385,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SDI_DATA</spirit:name>
+            <spirit:name>sdi_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sdi_data</spirit:name>
@@ -393,7 +393,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_READY</spirit:name>
+            <spirit:name>sync_ready</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sync_ready</spirit:name>
@@ -401,7 +401,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_VALID</spirit:name>
+            <spirit:name>sync_valid</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sync_valid</spirit:name>
@@ -409,7 +409,7 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>SYNC_DATA</spirit:name>
+            <spirit:name>sync_data</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>s1_sync</spirit:name>
@@ -482,7 +482,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d4ae3839</spirit:value>
+            <spirit:value>e614a53f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -498,7 +498,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d4ae3839</spirit:value>
+            <spirit:value>e614a53f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -687,9 +687,6 @@
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
         </spirit:wire>
       </spirit:port>
       <spirit:port>
@@ -884,9 +881,6 @@
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
         </spirit:wire>
       </spirit:port>
       <spirit:port>
@@ -1065,9 +1059,6 @@
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
         </spirit:wire>
       </spirit:port>
       <spirit:port>
@@ -1107,7 +1098,7 @@
       <spirit:file>
         <spirit:name>spi_engine_interconnect.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_d4ae3839</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_e614a53f</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1182,12 +1173,12 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/peripherals/spi_engine/interconnect</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:52:56Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:10:37Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0b7a3255"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="c4f8ac06"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="decb81c1"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="6faa013d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9165e5ab"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c4388edd"/>
     </xilinx:packagingInfo>

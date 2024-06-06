@@ -1798,7 +1798,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4406b039</spirit:value>
+            <spirit:value>13fa364a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1820,7 +1820,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4406b039</spirit:value>
+            <spirit:value>13fa364a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1840,7 +1840,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a3380b44</spirit:value>
+            <spirit:value>8b30a977</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6184,9 +6184,33 @@
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ALLOW_ASYM_MEM">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>CACHE_COHERENT_DEST</spirit:name>
-        <spirit:displayName>Cache Coherent Dest</spirit:displayName>
-        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CACHE_COHERENT_DEST">true</spirit:value>
+        <spirit:name>CACHE_COHERENT</spirit:name>
+        <spirit:displayName>Cache Coherent</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CACHE_COHERENT">false</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>AXI_AXCACHE</spirit:name>
+        <spirit:displayName>Axi Axcache</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.AXI_AXCACHE" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+        <spirit:vendorExtensions>
+          <xilinx:parameterInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:id="MODELPARAM_ENABLEMENT.AXI_AXCACHE">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:parameterInfo>
+        </spirit:vendorExtensions>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>AXI_AXPROT</spirit:name>
+        <spirit:displayName>Axi Axprot</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.AXI_AXPROT" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
+        <spirit:vendorExtensions>
+          <xilinx:parameterInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:id="MODELPARAM_ENABLEMENT.AXI_AXPROT">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:parameterInfo>
+        </spirit:vendorExtensions>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -6366,7 +6390,7 @@
       <spirit:file>
         <spirit:name>axi_dmac.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b602bf53</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_9c4d9b37</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -6543,7 +6567,7 @@
       <spirit:file>
         <spirit:name>xgui/axi_dmac_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_57e931f4</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_6f5028ec</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -6797,13 +6821,37 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ALLOW_ASYM_MEM">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>CACHE_COHERENT_DEST</spirit:name>
-      <spirit:displayName>Assume cache coherent</spirit:displayName>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.CACHE_COHERENT_DEST">true</spirit:value>
+      <spirit:name>CACHE_COHERENT</spirit:name>
+      <spirit:displayName>Cache Coherent</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.CACHE_COHERENT">false</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.CACHE_COHERENT_DEST">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.CACHE_COHERENT">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_AXCACHE</spirit:name>
+      <spirit:displayName>ARCACHE/AWCACHE</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_AXCACHE" spirit:bitStringLength="4">&quot;0011&quot;</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.AXI_AXCACHE">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_AXPROT</spirit:name>
+      <spirit:displayName>ARPROT/AWPROT</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_AXPROT" spirit:bitStringLength="3">&quot;000&quot;</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.AXI_AXPROT">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -6827,15 +6875,15 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/axi_dmac</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:46:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:02:18Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="8f64214e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="171a117c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b8e5e594"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="694663ae"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="623ef345"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="3f338230"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ab308b95"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="42e5d39a"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

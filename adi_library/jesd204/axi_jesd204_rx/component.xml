@@ -627,7 +627,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ee177bde</spirit:value>
+            <spirit:value>34b2f2aa</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -646,7 +646,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>5ba02ad7</spirit:value>
+            <spirit:value>77c08331</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1835,11 +1835,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/peripherals/jesd204/axi_jesd204_rx</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:51:05Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:08:35Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8b19c33c"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="df352823"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="72c0f30a"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9a9f8847"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="71fa65e4"/>

@@ -301,7 +301,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7b5d4a4d</spirit:value>
+            <spirit:value>1cd74629</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -317,7 +317,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c5473c1f</spirit:value>
+            <spirit:value>ab4a21cf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1242,7 +1242,7 @@
       <spirit:file>
         <spirit:name>axi_ad777x.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_c058d44e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_55d3d8cc</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1351,11 +1351,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/ad777x</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:39:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T02:55:09Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6c8ab4b4"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="bc6ae9a9"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="ae899c3e"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3313f287"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="dbd96ef0"/>

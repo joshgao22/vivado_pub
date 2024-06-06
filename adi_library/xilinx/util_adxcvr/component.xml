@@ -23899,7 +23899,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1845bcbd</spirit:value>
+            <spirit:value>4dc43688</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -23918,7 +23918,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7d9eb72f</spirit:value>
+            <spirit:value>01045f07</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -67075,7 +67075,7 @@
       <spirit:file>
         <spirit:name>util_adxcvr.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_ec24f6a3</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ae47eb4b</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -67528,11 +67528,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://wiki.analog.com/resources/fpga/docs/util_xcvr</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:58:03Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:15:47Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9b08bb86"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b550c633"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="d70ad8a4"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ef4432cb"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="46f75622"/>

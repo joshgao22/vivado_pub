@@ -1,6 +1,6 @@
 // ***************************************************************************
 // ***************************************************************************
-// Copyright (C) 2014-2023 Analog Devices, Inc. All rights reserved.
+// Copyright (C) 2014-2024 Analog Devices, Inc. All rights reserved.
 //
 // In this HDL repository, there are many different and unique modules, consisting
 // of various HDL (Verilog or VHDL) components. The individual modules are
@@ -26,7 +26,7 @@
 //
 //   2. An ADI specific BSD license, which can be found in the top level directory
 //      of this repository (LICENSE_ADIBSD), and also on-line at:
-//      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+//      https://github.com/analogdevicesinc/hdl/blob/main/LICENSE_ADIBSD
 //      This will allow to generate bit files and not release the source code,
 //      as long as it attaches to an ADI device.
 //
@@ -45,7 +45,8 @@ module dest_axi_mm #(
   parameter MAX_BYTES_PER_BURST = 128,
   parameter BYTES_PER_BURST_WIDTH = $clog2(MAX_BYTES_PER_BURST),
   parameter AXI_LENGTH_WIDTH = 8,
-  parameter CACHE_COHERENT = 0
+  parameter [3:0] AXI_AXCACHE = 4'b0011,
+  parameter [2:0] AXI_AXPROT = 3'b000
 ) (
   input                               m_axi_aclk,
   input                               m_axi_aresetn,
@@ -117,7 +118,8 @@ module dest_axi_mm #(
     .DMA_DATA_WIDTH(DMA_DATA_WIDTH),
     .LENGTH_WIDTH(AXI_LENGTH_WIDTH),
     .DMA_ADDR_WIDTH(DMA_ADDR_WIDTH),
-    .CACHE_COHERENT(CACHE_COHERENT)
+    .AXI_AXCACHE(AXI_AXCACHE),
+    .AXI_AXPROT(AXI_AXPROT)
   ) i_addr_gen (
     .clk(m_axi_aclk),
     .resetn(m_axi_aresetn),

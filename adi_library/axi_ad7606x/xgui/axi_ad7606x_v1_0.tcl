@@ -10,21 +10,21 @@ proc init_gui { IPINST } {
 
 }
 
-proc update_PARAM_VALUE.ADC_CH_DW { PARAM_VALUE.ADC_CH_DW } {
-	# Procedure called to update ADC_CH_DW when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.ADC_CH_DW { PARAM_VALUE.ADC_CH_DW } {
-	# Procedure called to validate ADC_CH_DW
-	return true
-}
-
 proc update_PARAM_VALUE.ADC_N_BITS { PARAM_VALUE.ADC_N_BITS } {
 	# Procedure called to update ADC_N_BITS when any of the dependent parameters in the arguments change
 }
 
 proc validate_PARAM_VALUE.ADC_N_BITS { PARAM_VALUE.ADC_N_BITS } {
 	# Procedure called to validate ADC_N_BITS
+	return true
+}
+
+proc update_PARAM_VALUE.ADC_TO_DMA_N_BITS { PARAM_VALUE.ADC_TO_DMA_N_BITS } {
+	# Procedure called to update ADC_TO_DMA_N_BITS when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.ADC_TO_DMA_N_BITS { PARAM_VALUE.ADC_TO_DMA_N_BITS } {
+	# Procedure called to validate ADC_TO_DMA_N_BITS
 	return true
 }
 
@@ -66,9 +66,9 @@ proc update_MODELPARAM_VALUE.DEV_CONFIG { MODELPARAM_VALUE.DEV_CONFIG PARAM_VALU
 	set_property value [get_property value ${PARAM_VALUE.DEV_CONFIG}] ${MODELPARAM_VALUE.DEV_CONFIG}
 }
 
-proc update_MODELPARAM_VALUE.ADC_CH_DW { MODELPARAM_VALUE.ADC_CH_DW PARAM_VALUE.ADC_CH_DW } {
+proc update_MODELPARAM_VALUE.ADC_TO_DMA_N_BITS { MODELPARAM_VALUE.ADC_TO_DMA_N_BITS PARAM_VALUE.ADC_TO_DMA_N_BITS } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.ADC_CH_DW}] ${MODELPARAM_VALUE.ADC_CH_DW}
+	set_property value [get_property value ${PARAM_VALUE.ADC_TO_DMA_N_BITS}] ${MODELPARAM_VALUE.ADC_TO_DMA_N_BITS}
 }
 
 proc update_MODELPARAM_VALUE.ADC_N_BITS { MODELPARAM_VALUE.ADC_N_BITS PARAM_VALUE.ADC_N_BITS } {

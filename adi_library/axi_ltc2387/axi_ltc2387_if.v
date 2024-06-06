@@ -1,6 +1,6 @@
 // ***************************************************************************
 // ***************************************************************************
-// Copyright (C) 2022-2023 Analog Devices, Inc. All rights reserved.
+// Copyright (C) 2022-2024 Analog Devices, Inc. All rights reserved.
 //
 // In this HDL repository, there are many different and unique modules, consisting
 // of various HDL (Verilog or VHDL) components. The individual modules are
@@ -26,7 +26,7 @@
 //
 //   2. An ADI specific BSD license, which can be found in the top level directory
 //      of this repository (LICENSE_ADIBSD), and also on-line at:
-//      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+//      https://github.com/analogdevicesinc/hdl/blob/main/LICENSE_ADIBSD
 //      This will allow to generate bit files and not release the source code,
 //      as long as it attaches to an ADI device.
 //
@@ -68,7 +68,7 @@ module axi_ltc2387_if #(
   input             db_p,
   input             db_n,
 
-  output            adc_valid,
+  output reg                  adc_valid,
   output reg [RESOLUTION-1:0] adc_data
 );
 
@@ -96,16 +96,16 @@ module axi_ltc2387_if #(
 
   // assignments
 
-  // adc_valid is 1 for the current sample that is sent
-  assign adc_valid = clk_gate_d[1] & ~clk_gate_d[0];
-
   always @(posedge clk) begin
+    adc_valid <= 1'b0;
     clk_gate_d <= {clk_gate_d[1:0], clk_gate};
     if (clk_gate_d[1] == 1'b1 && clk_gate_d[0] == 1'b0) begin
       if (RESOLUTION == 18) begin
         adc_data <= adc_data_int;
+        adc_valid <= 1'b1;
       end else begin
         adc_data <= adc_data_int[15:0];
+        adc_valid <= 1'b1;
       end
     end
   end

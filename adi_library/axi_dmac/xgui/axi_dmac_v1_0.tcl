@@ -25,8 +25,6 @@ proc init_gui { IPINST } {
   set DMA_DATA_WIDTH_DEST [ipgui::add_param $IPINST -name "DMA_DATA_WIDTH_DEST" -parent ${Destination}]
   set_property tooltip {Bus Width: For Memory-Mapped interface the valid range is 32-1024 bits} ${DMA_DATA_WIDTH_DEST}
   ipgui::add_param $IPINST -name "AXI_SLICE_DEST" -parent ${Destination}
-  set CACHE_COHERENT_DEST [ipgui::add_param $IPINST -name "CACHE_COHERENT_DEST" -parent ${Destination}]
-  set_property tooltip {Assume destination port ensures cache coherency (e.g. Ultrascale HPC port)} ${CACHE_COHERENT_DEST}
 
   #Adding Group
   set Scatter-Gather [ipgui::add_group $IPINST -name "Scatter-Gather" -parent ${DMA_Endpoint_Configuration}]
@@ -41,12 +39,16 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "FIFO_SIZE" -parent ${General_Configuration} -widget comboBox
   ipgui::add_param $IPINST -name "MAX_BYTES_PER_BURST" -parent ${General_Configuration}
   ipgui::add_param $IPINST -name "DMA_AXI_ADDR_WIDTH" -parent ${General_Configuration}
+  ipgui::add_param $IPINST -name "AXI_AXCACHE" -parent ${General_Configuration}
+  ipgui::add_param $IPINST -name "AXI_AXPROT" -parent ${General_Configuration}
 
   #Adding Group
   set Features [ipgui::add_group $IPINST -name "Features" -parent ${Page_0}]
   ipgui::add_param $IPINST -name "CYCLIC" -parent ${Features}
-  ipgui::add_param $IPINST -name "DMA_2D_TRANSFER" -parent ${Features}
   ipgui::add_param $IPINST -name "DMA_SG_TRANSFER" -parent ${Features}
+  ipgui::add_param $IPINST -name "DMA_2D_TRANSFER" -parent ${Features}
+  set CACHE_COHERENT [ipgui::add_param $IPINST -name "CACHE_COHERENT" -parent ${Features}]
+  set_property tooltip {Assume DMA ports ensure cache coherence (e.g. Ultrascale HPC port)} ${CACHE_COHERENT}
 
   #Adding Group
   set Clock_Domain_Configuration [ipgui::add_group $IPINST -name "Clock Domain Configuration" -parent ${Page_0}]
@@ -66,24 +68,59 @@ proc init_gui { IPINST } {
 
 }
 
-proc update_PARAM_VALUE.CACHE_COHERENT_DEST { PARAM_VALUE.CACHE_COHERENT_DEST PARAM_VALUE.DMA_TYPE_DEST PARAM_VALUE.DMA_AXI_PROTOCOL_DEST } {
-	# Procedure called to update CACHE_COHERENT_DEST when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.AXI_AXCACHE { PARAM_VALUE.AXI_AXCACHE PARAM_VALUE.CACHE_COHERENT } {
+	# Procedure called to update AXI_AXCACHE when any of the dependent parameters in the arguments change
 	
-	set CACHE_COHERENT_DEST ${PARAM_VALUE.CACHE_COHERENT_DEST}
-	set DMA_TYPE_DEST ${PARAM_VALUE.DMA_TYPE_DEST}
-	set DMA_AXI_PROTOCOL_DEST ${PARAM_VALUE.DMA_AXI_PROTOCOL_DEST}
-	set values(DMA_TYPE_DEST) [get_property value $DMA_TYPE_DEST]
-	set values(DMA_AXI_PROTOCOL_DEST) [get_property value $DMA_AXI_PROTOCOL_DEST]
-	if { [gen_USERPARAMETER_CACHE_COHERENT_DEST_ENABLEMENT $values(DMA_TYPE_DEST) $values(DMA_AXI_PROTOCOL_DEST)] } {
-		set_property enabled true $CACHE_COHERENT_DEST
+	set AXI_AXCACHE ${PARAM_VALUE.AXI_AXCACHE}
+	set CACHE_COHERENT ${PARAM_VALUE.CACHE_COHERENT}
+	set values(CACHE_COHERENT) [get_property value $CACHE_COHERENT]
+	if { [gen_USERPARAMETER_AXI_AXCACHE_ENABLEMENT $values(CACHE_COHERENT)] } {
+		set_property enabled true $AXI_AXCACHE
 	} else {
-		set_property enabled false $CACHE_COHERENT_DEST
-		set_property value [gen_USERPARAMETER_CACHE_COHERENT_DEST_VALUE $values(DMA_TYPE_DEST) $values(DMA_AXI_PROTOCOL_DEST)] $CACHE_COHERENT_DEST
+		set_property enabled false $AXI_AXCACHE
 	}
 }
 
-proc validate_PARAM_VALUE.CACHE_COHERENT_DEST { PARAM_VALUE.CACHE_COHERENT_DEST } {
-	# Procedure called to validate CACHE_COHERENT_DEST
+proc validate_PARAM_VALUE.AXI_AXCACHE { PARAM_VALUE.AXI_AXCACHE } {
+	# Procedure called to validate AXI_AXCACHE
+	return true
+}
+
+proc update_PARAM_VALUE.AXI_AXPROT { PARAM_VALUE.AXI_AXPROT PARAM_VALUE.CACHE_COHERENT } {
+	# Procedure called to update AXI_AXPROT when any of the dependent parameters in the arguments change
+	
+	set AXI_AXPROT ${PARAM_VALUE.AXI_AXPROT}
+	set CACHE_COHERENT ${PARAM_VALUE.CACHE_COHERENT}
+	set values(CACHE_COHERENT) [get_property value $CACHE_COHERENT]
+	if { [gen_USERPARAMETER_AXI_AXPROT_ENABLEMENT $values(CACHE_COHERENT)] } {
+		set_property enabled true $AXI_AXPROT
+	} else {
+		set_property enabled false $AXI_AXPROT
+	}
+}
+
+proc validate_PARAM_VALUE.AXI_AXPROT { PARAM_VALUE.AXI_AXPROT } {
+	# Procedure called to validate AXI_AXPROT
+	return true
+}
+
+proc update_PARAM_VALUE.CACHE_COHERENT { PARAM_VALUE.CACHE_COHERENT PARAM_VALUE.DMA_TYPE_SRC PARAM_VALUE.DMA_TYPE_DEST } {
+	# Procedure called to update CACHE_COHERENT when any of the dependent parameters in the arguments change
+	
+	set CACHE_COHERENT ${PARAM_VALUE.CACHE_COHERENT}
+	set DMA_TYPE_SRC ${PARAM_VALUE.DMA_TYPE_SRC}
+	set DMA_TYPE_DEST ${PARAM_VALUE.DMA_TYPE_DEST}
+	set values(DMA_TYPE_SRC) [get_property value $DMA_TYPE_SRC]
+	set values(DMA_TYPE_DEST) [get_property value $DMA_TYPE_DEST]
+	if { [gen_USERPARAMETER_CACHE_COHERENT_ENABLEMENT $values(DMA_TYPE_SRC) $values(DMA_TYPE_DEST)] } {
+		set_property enabled true $CACHE_COHERENT
+	} else {
+		set_property enabled false $CACHE_COHERENT
+	}
+}
+
+proc validate_PARAM_VALUE.CACHE_COHERENT { PARAM_VALUE.CACHE_COHERENT } {
+	# Procedure called to validate CACHE_COHERENT
 	return true
 }
 
@@ -595,8 +632,18 @@ proc update_MODELPARAM_VALUE.ALLOW_ASYM_MEM { MODELPARAM_VALUE.ALLOW_ASYM_MEM PA
 	set_property value [get_property value ${PARAM_VALUE.ALLOW_ASYM_MEM}] ${MODELPARAM_VALUE.ALLOW_ASYM_MEM}
 }
 
-proc update_MODELPARAM_VALUE.CACHE_COHERENT_DEST { MODELPARAM_VALUE.CACHE_COHERENT_DEST PARAM_VALUE.CACHE_COHERENT_DEST } {
+proc update_MODELPARAM_VALUE.CACHE_COHERENT { MODELPARAM_VALUE.CACHE_COHERENT PARAM_VALUE.CACHE_COHERENT } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.CACHE_COHERENT_DEST}] ${MODELPARAM_VALUE.CACHE_COHERENT_DEST}
+	set_property value [get_property value ${PARAM_VALUE.CACHE_COHERENT}] ${MODELPARAM_VALUE.CACHE_COHERENT}
+}
+
+proc update_MODELPARAM_VALUE.AXI_AXCACHE { MODELPARAM_VALUE.AXI_AXCACHE PARAM_VALUE.AXI_AXCACHE } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.AXI_AXCACHE}] ${MODELPARAM_VALUE.AXI_AXCACHE}
+}
+
+proc update_MODELPARAM_VALUE.AXI_AXPROT { MODELPARAM_VALUE.AXI_AXPROT PARAM_VALUE.AXI_AXPROT } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.AXI_AXPROT}] ${MODELPARAM_VALUE.AXI_AXPROT}
 }
 

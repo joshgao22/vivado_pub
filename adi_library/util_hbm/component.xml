@@ -5674,7 +5674,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e53075f6</spirit:value>
+            <spirit:value>adc69daf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5696,7 +5696,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9b7d6e4d</spirit:value>
+            <spirit:value>7348ecf4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6696,7 +6696,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>HBM_SEGMENTS_PER_MASTER</spirit:name>
         <spirit:displayName>Hbm Segments Per Master</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.HBM_SEGMENTS_PER_MASTER"/>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.HBM_SEGMENTS_PER_MASTER">8</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>HBM_SEGMENT_INDEX</spirit:name>
@@ -6818,7 +6818,7 @@
       <spirit:file>
         <spirit:name>util_hbm.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a4a1e134</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_fc2eb467</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -6948,7 +6948,7 @@
     <spirit:parameter>
       <spirit:name>LENGTH_WIDTH</spirit:name>
       <spirit:displayName>Storage size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.LENGTH_WIDTH" spirit:choiceRef="choice_pairs_cebf9777">24</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.LENGTH_WIDTH" spirit:choiceRef="choice_pairs_cebf9777">28</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>AXI_PROTOCOL</spirit:name>
@@ -6973,7 +6973,7 @@
     <spirit:parameter>
       <spirit:name>HBM_SEGMENTS_PER_MASTER</spirit:name>
       <spirit:displayName>HBM sections per master</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.HBM_SEGMENTS_PER_MASTER"/>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.HBM_SEGMENTS_PER_MASTER">8</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -7040,11 +7040,11 @@
       <xilinx:vendorDisplayName>Analog Devices</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.analog.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-14T03:55:19Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-06-06T03:12:49Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2023.2.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="600a0db5"/>
+      <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0cf35e7b"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="63780b38"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="10097211"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cd4bda90"/>
