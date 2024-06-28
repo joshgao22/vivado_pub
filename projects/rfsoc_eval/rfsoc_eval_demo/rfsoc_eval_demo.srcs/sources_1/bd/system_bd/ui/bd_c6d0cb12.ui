@@ -1,0 +1,176 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.510572",
+   "Default View_TopLeft":"-1246,4",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port adc1_clk -pg 1 -lvl 0 -x 0 -y 700 -defaultsOSRD
+preplace port dac0_clk -pg 1 -lvl 0 -x 0 -y 720 -defaultsOSRD
+preplace port m00_axis -pg 1 -lvl 3 -x 1120 -y 630 -defaultsOSRD
+preplace port m01_axis -pg 1 -lvl 3 -x 1120 -y 650 -defaultsOSRD
+preplace port m02_axis -pg 1 -lvl 3 -x 1120 -y 670 -defaultsOSRD
+preplace port m03_axis -pg 1 -lvl 3 -x 1120 -y 690 -defaultsOSRD
+preplace port m10_axis -pg 1 -lvl 3 -x 1120 -y 710 -defaultsOSRD
+preplace port m11_axis -pg 1 -lvl 3 -x 1120 -y 730 -defaultsOSRD
+preplace port m12_axis -pg 1 -lvl 3 -x 1120 -y 750 -defaultsOSRD
+preplace port m13_axis -pg 1 -lvl 3 -x 1120 -y 770 -defaultsOSRD
+preplace port m20_axis -pg 1 -lvl 3 -x 1120 -y 790 -defaultsOSRD
+preplace port m21_axis -pg 1 -lvl 3 -x 1120 -y 810 -defaultsOSRD
+preplace port m22_axis -pg 1 -lvl 3 -x 1120 -y 830 -defaultsOSRD
+preplace port m23_axis -pg 1 -lvl 3 -x 1120 -y 850 -defaultsOSRD
+preplace port m30_axis -pg 1 -lvl 3 -x 1120 -y 870 -defaultsOSRD
+preplace port m31_axis -pg 1 -lvl 3 -x 1120 -y 890 -defaultsOSRD
+preplace port m32_axis -pg 1 -lvl 3 -x 1120 -y 910 -defaultsOSRD
+preplace port m33_axis -pg 1 -lvl 3 -x 1120 -y 930 -defaultsOSRD
+preplace port pl_clk -pg 1 -lvl 0 -x 0 -y 1530 -defaultsOSRD
+preplace port pl_sysref -pg 1 -lvl 0 -x 0 -y 1550 -defaultsOSRD
+preplace port s00_axis -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
+preplace port s02_axis -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace port s10_axis -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
+preplace port s12_axis -pg 1 -lvl 0 -x 0 -y 600 -defaultsOSRD
+preplace port s20_axis -pg 1 -lvl 0 -x 0 -y 620 -defaultsOSRD
+preplace port s22_axis -pg 1 -lvl 0 -x 0 -y 640 -defaultsOSRD
+preplace port s30_axis -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port s32_axis -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
+preplace port spi -pg 1 -lvl 3 -x 1120 -y 340 -defaultsOSRD
+preplace port sysref_in -pg 1 -lvl 0 -x 0 -y 900 -defaultsOSRD
+preplace port vin0_01 -pg 1 -lvl 0 -x 0 -y 740 -defaultsOSRD
+preplace port vin0_23 -pg 1 -lvl 0 -x 0 -y 760 -defaultsOSRD
+preplace port vin1_01 -pg 1 -lvl 0 -x 0 -y 780 -defaultsOSRD
+preplace port vin1_23 -pg 1 -lvl 0 -x 0 -y 800 -defaultsOSRD
+preplace port vin2_01 -pg 1 -lvl 0 -x 0 -y 820 -defaultsOSRD
+preplace port vin2_23 -pg 1 -lvl 0 -x 0 -y 840 -defaultsOSRD
+preplace port vin3_01 -pg 1 -lvl 0 -x 0 -y 860 -defaultsOSRD
+preplace port vin3_23 -pg 1 -lvl 0 -x 0 -y 880 -defaultsOSRD
+preplace port vout00 -pg 1 -lvl 3 -x 1120 -y 950 -defaultsOSRD
+preplace port vout02 -pg 1 -lvl 3 -x 1120 -y 970 -defaultsOSRD
+preplace port vout10 -pg 1 -lvl 3 -x 1120 -y 990 -defaultsOSRD
+preplace port vout12 -pg 1 -lvl 3 -x 1120 -y 1010 -defaultsOSRD
+preplace port vout20 -pg 1 -lvl 3 -x 1120 -y 1030 -defaultsOSRD
+preplace port vout22 -pg 1 -lvl 3 -x 1120 -y 1050 -defaultsOSRD
+preplace port vout30 -pg 1 -lvl 3 -x 1120 -y 1070 -defaultsOSRD
+preplace port vout32 -pg 1 -lvl 3 -x 1120 -y 1090 -defaultsOSRD
+preplace port port-id_clk_adc0 -pg 1 -lvl 3 -x 1120 -y 1110 -defaultsOSRD
+preplace port port-id_clk_adc1 -pg 1 -lvl 3 -x 1120 -y 1130 -defaultsOSRD
+preplace port port-id_clk_adc2 -pg 1 -lvl 3 -x 1120 -y 1150 -defaultsOSRD
+preplace port port-id_clk_adc3 -pg 1 -lvl 3 -x 1120 -y 1170 -defaultsOSRD
+preplace port port-id_clk_dac0 -pg 1 -lvl 3 -x 1120 -y 1190 -defaultsOSRD
+preplace port port-id_clk_dac1 -pg 1 -lvl 3 -x 1120 -y 1210 -defaultsOSRD
+preplace port port-id_clk_dac2 -pg 1 -lvl 3 -x 1120 -y 1230 -defaultsOSRD
+preplace port port-id_clk_dac3 -pg 1 -lvl 3 -x 1120 -y 1250 -defaultsOSRD
+preplace port port-id_m0_axis_aclk -pg 1 -lvl 0 -x 0 -y 1100 -defaultsOSRD
+preplace port port-id_m0_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1080 -defaultsOSRD
+preplace port port-id_m1_axis_aclk -pg 1 -lvl 0 -x 0 -y 1140 -defaultsOSRD
+preplace port port-id_m1_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1120 -defaultsOSRD
+preplace port port-id_m2_axis_aclk -pg 1 -lvl 0 -x 0 -y 1180 -defaultsOSRD
+preplace port port-id_m2_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1160 -defaultsOSRD
+preplace port port-id_m3_axis_aclk -pg 1 -lvl 0 -x 0 -y 1220 -defaultsOSRD
+preplace port port-id_m3_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1200 -defaultsOSRD
+preplace port port-id_ps_clk0 -pg 1 -lvl 3 -x 1120 -y 440 -defaultsOSRD
+preplace port port-id_s0_axis_aclk -pg 1 -lvl 0 -x 0 -y 1260 -defaultsOSRD
+preplace port port-id_s0_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1240 -defaultsOSRD
+preplace port port-id_s1_axis_aclk -pg 1 -lvl 0 -x 0 -y 1300 -defaultsOSRD
+preplace port port-id_s1_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1280 -defaultsOSRD
+preplace port port-id_s2_axis_aclk -pg 1 -lvl 0 -x 0 -y 1340 -defaultsOSRD
+preplace port port-id_s2_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1320 -defaultsOSRD
+preplace port port-id_s3_axis_aclk -pg 1 -lvl 0 -x 0 -y 1380 -defaultsOSRD
+preplace port port-id_s3_axis_aresetn -pg 1 -lvl 0 -x 0 -y 1360 -defaultsOSRD
+preplace port port-id_spi_active -pg 1 -lvl 3 -x 1120 -y 360 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 3 -x 1120 -y 470 -defaultsOSRD
+preplace port port-id_sys_rstn -pg 1 -lvl 3 -x 1120 -y 490 -defaultsOSRD
+preplace inst axi_spi_engine -pg 1 -lvl 2 -x 920 -y 360 -defaultsOSRD
+preplace inst mts_clk_gen -pg 1 -lvl 1 -x 370 -y 1540 -defaultsOSRD
+preplace inst ps8_axi_periph -pg 1 -lvl 1 -x 370 -y 340 -defaultsOSRD
+preplace inst rst_ps8_96M -pg 1 -lvl 2 -x 920 -y 140 -defaultsOSRD
+preplace inst usp_rf_data_converter -pg 1 -lvl 1 -x 370 -y 950 -defaultsOSRD
+preplace inst xlconcat_irq -pg 1 -lvl 2 -x 920 -y 560 -defaultsOSRD
+preplace inst zynq_ultra_ps_e -pg 1 -lvl 1 -x 370 -y 120 -defaultsOSRD
+preplace netloc axi_spi_engine_active_0 1 2 1 N 360
+preplace netloc axi_spi_engine_irq 1 1 2 740 270 1100
+preplace netloc m0_axis_aclk_0_1 1 0 1 NJ 1100
+preplace netloc m0_axis_aresetn_0_1 1 0 1 NJ 1080
+preplace netloc m1_axis_aclk_0_1 1 0 1 NJ 1140
+preplace netloc m1_axis_aresetn_0_1 1 0 1 NJ 1120
+preplace netloc m2_axis_aclk_0_1 1 0 1 NJ 1180
+preplace netloc m2_axis_aresetn_0_1 1 0 1 NJ 1160
+preplace netloc m3_axis_aclk_0_1 1 0 1 NJ 1220
+preplace netloc m3_axis_aresetn_0_1 1 0 1 NJ 1200
+preplace netloc mts_clk_gen_mts_sysref 1 0 2 20 1460 680
+preplace netloc mts_clk_gen_sys_clk 1 1 2 710 470 N
+preplace netloc mts_clk_gen_sys_rstn 1 1 2 730 490 N
+preplace netloc rst_ps8_96M_peripheral_aresetn 1 0 3 20 10 730 40 1100
+preplace netloc s0_axis_aclk_0_1 1 0 1 NJ 1260
+preplace netloc s0_axis_aresetn_0_1 1 0 1 NJ 1240
+preplace netloc s1_axis_aclk_0_1 1 0 1 NJ 1300
+preplace netloc s1_axis_aresetn_0_1 1 0 1 NJ 1280
+preplace netloc s2_axis_aclk_0_1 1 0 1 NJ 1340
+preplace netloc s2_axis_aresetn_0_1 1 0 1 NJ 1320
+preplace netloc s3_axis_aclk_0_1 1 0 1 NJ 1380
+preplace netloc s3_axis_aresetn_0_1 1 0 1 NJ 1360
+preplace netloc usp_rf_data_converter_clk_adc0 1 1 2 N 1110 N
+preplace netloc usp_rf_data_converter_clk_adc1 1 1 2 N 1130 N
+preplace netloc usp_rf_data_converter_clk_adc2 1 1 2 N 1150 N
+preplace netloc usp_rf_data_converter_clk_adc3 1 1 2 N 1170 N
+preplace netloc usp_rf_data_converter_clk_dac0 1 1 2 N 1190 N
+preplace netloc usp_rf_data_converter_clk_dac1 1 1 2 N 1210 N
+preplace netloc usp_rf_data_converter_clk_dac2 1 1 2 N 1230 N
+preplace netloc usp_rf_data_converter_clk_dac3 1 1 2 N 1250 N
+preplace netloc usp_rf_data_converter_irq 1 1 1 720 550n
+preplace netloc xlconcat_irq_dout 1 0 3 40 1450 N 1450 1100
+preplace netloc zynq_ultra_ps_e_pl_clk0 1 0 3 60 1440 700 440 N
+preplace netloc zynq_ultra_ps_e_pl_resetn0 1 1 1 N 120
+preplace netloc adc1_clk_1 1 0 1 NJ 700
+preplace netloc axi_spi_engine_spi_0 1 2 1 N 340
+preplace netloc dac0_clk_1 1 0 1 NJ 720
+preplace netloc pl_clk_0_1 1 0 1 NJ 1530
+preplace netloc pl_sysref_0_1 1 0 1 NJ 1550
+preplace netloc ps8_axi_periph_M00_AXI 1 1 1 N 330
+preplace netloc ps8_axi_periph_M01_AXI 1 0 2 30 20 690
+preplace netloc s00_axis_0_1 1 0 1 NJ 540
+preplace netloc s02_axis_0_1 1 0 1 NJ 560
+preplace netloc s10_axis_0_1 1 0 1 NJ 580
+preplace netloc s12_axis_0_1 1 0 1 NJ 600
+preplace netloc s20_axis_0_1 1 0 1 NJ 620
+preplace netloc s22_axis_0_1 1 0 1 NJ 640
+preplace netloc s30_axis_0_1 1 0 1 NJ 660
+preplace netloc s32_axis_0_1 1 0 1 NJ 680
+preplace netloc sysref_in_1 1 0 1 NJ 900
+preplace netloc usp_rf_data_converter_m00_axis 1 1 2 N 630 N
+preplace netloc usp_rf_data_converter_m01_axis 1 1 2 N 650 N
+preplace netloc usp_rf_data_converter_m02_axis 1 1 2 N 670 N
+preplace netloc usp_rf_data_converter_m03_axis 1 1 2 N 690 N
+preplace netloc usp_rf_data_converter_m10_axis 1 1 2 N 710 N
+preplace netloc usp_rf_data_converter_m11_axis 1 1 2 N 730 N
+preplace netloc usp_rf_data_converter_m12_axis 1 1 2 N 750 N
+preplace netloc usp_rf_data_converter_m13_axis 1 1 2 N 770 N
+preplace netloc usp_rf_data_converter_m20_axis 1 1 2 N 790 N
+preplace netloc usp_rf_data_converter_m21_axis 1 1 2 N 810 N
+preplace netloc usp_rf_data_converter_m22_axis 1 1 2 N 830 N
+preplace netloc usp_rf_data_converter_m23_axis 1 1 2 N 850 N
+preplace netloc usp_rf_data_converter_m30_axis 1 1 2 N 870 N
+preplace netloc usp_rf_data_converter_m31_axis 1 1 2 N 890 N
+preplace netloc usp_rf_data_converter_m32_axis 1 1 2 N 910 N
+preplace netloc usp_rf_data_converter_m33_axis 1 1 2 N 930 N
+preplace netloc usp_rf_data_converter_vout00 1 1 2 N 950 N
+preplace netloc usp_rf_data_converter_vout02 1 1 2 N 970 N
+preplace netloc usp_rf_data_converter_vout10 1 1 2 N 990 N
+preplace netloc usp_rf_data_converter_vout12 1 1 2 N 1010 N
+preplace netloc usp_rf_data_converter_vout20 1 1 2 N 1030 N
+preplace netloc usp_rf_data_converter_vout22 1 1 2 N 1050 N
+preplace netloc usp_rf_data_converter_vout30 1 1 2 N 1070 N
+preplace netloc usp_rf_data_converter_vout32 1 1 2 N 1090 N
+preplace netloc vin0_01_1 1 0 1 NJ 740
+preplace netloc vin0_23_1 1 0 1 NJ 760
+preplace netloc vin1_01_1 1 0 1 NJ 780
+preplace netloc vin1_23_1 1 0 1 NJ 800
+preplace netloc vin2_01_0_1 1 0 1 NJ 820
+preplace netloc vin2_23_0_1 1 0 1 NJ 840
+preplace netloc vin3_01_0_1 1 0 1 NJ 860
+preplace netloc vin3_23_0_1 1 0 1 NJ 880
+preplace netloc zynq_ultra_ps_e_M_AXI_HPM0_FPD 1 0 2 50 30 680
+levelinfo -pg 1 0 370 920 1120
+pagesize -pg 1 -db -bbox -sgen -170 0 1240 1610
+"
+}
+
