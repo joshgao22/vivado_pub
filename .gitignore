@@ -31,25 +31,27 @@
 *.gen/
 *.hw/
 *.ip_user_files/
-*.runs/**/*
 *.sim/
-
-# include xpr
-!*.xpr
-
-# include hardware (Xilinx support archive) file
-!/projects/*/*/*.xsa
-!/projects/*/*/*.md
 
 # include board preset tcl (be careful about the path)
 !/projects/*/*.tcl
 
-# include design source
+# source: include everything
 !**/*.srcs/**/*
 
-# include design run results
+# runs: exclude everything but design run results
+*.runs/**/*
 !**/*.runs/impl_*/*.bit
 !**/*.runs/impl_*/*.ltx
+
+# xpr: needed for recreating design
+!*.xpr
+
+# xsa (Xilinx support archive): include for ps
+!/projects/*/*/*.xsa
+
+# project documents
+!/projects/*/*/*.md
 
 
 ################################################################################
@@ -57,37 +59,37 @@
 ################################################################################
 
 # include sdk directory and everything in it
-!/projects/*/*/vitis/
-!/projects/*/*/vitis/**
-/projects/*/*/vitis/**.log
-/projects/*/*/vitis/.analytics
+!/projects/*/*/vitis*/
+!/projects/*/*/vitis*/**
+/projects/*/*/vitis*/.analytics
+/projects/*/*/vitis*/**/logs/
 
 # exclude some obscure hidden SDK folders
-/projects/*/*/vitis/.metadata/
-/projects/*/*/vitis/.sdk/
-/projects/*/*/vitis/RemoteSystemsTempFiles/
-/projects/*/*/vitis/webtalk/
+/projects/*/*/vitis*/.metadata/
+/projects/*/*/vitis*/.sdk/
+/projects/*/*/vitis*/RemoteSystemsTempFiles/
+/projects/*/*/vitis*/webtalk/
 
 # hw_platform: exclude the entire hw_platform folder, as everything can be
 # generated from the .hdf file. Make sure to include the bitstream in the .hdf
 # file when exporting from Vivado!
-/projects/*/*/vitis/*_hw_platform_*/
+/projects/*/*/vitis*/*_hw_platform_*/
 
 # BSP: only keep `.cproject`, `.project`, `.sdkproject`, `.system.mss` and
 # Makefile, ps lib files are regenerated automatically
-/projects/*/*/vitis/*_bsp/*
-!/projects/*/*/vitis/*_bsp/*.cproject
-!/projects/*/*/vitis/*_bsp/*.project
-!/projects/*/*/vitis/*_bsp/*.sdkproject
-!/projects/*/*/vitis/*_bsp/system.mss
-!/projects/*/*/vitis/*_bsp/Makefile
+/projects/*/*/vitis*/*_bsp/*
+!/projects/*/*/vitis*/*_bsp/*.cproject
+!/projects/*/*/vitis*/*_bsp/*.project
+!/projects/*/*/vitis*/*_bsp/*.sdkproject
+!/projects/*/*/vitis*/*_bsp/system.mss
+!/projects/*/*/vitis*/*_bsp/Makefile
 
 # Application: ignored file patterns, exclude Debug & Release folders
-/projects/*/*/vitis/**/*.o
-/projects/*/*/vitis/**/*.d
-/projects/*/*/vitis/**/*.a
-/projects/*/*/vitis/*/Debug/
-/projects/*/*/vitis/*/Release/
+/projects/*/*/vitis*/**/*.o
+/projects/*/*/vitis*/**/*.d
+/projects/*/*/vitis*/**/*.a
+/projects/*/*/vitis*/**/Debug/
+/projects/*/*/vitis*/**/Release/
 
 
 ################################################################################
