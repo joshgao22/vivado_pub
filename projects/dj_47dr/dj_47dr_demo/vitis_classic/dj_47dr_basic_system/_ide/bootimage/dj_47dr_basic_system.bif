@@ -1,0 +1,7 @@
+//arch = zynqmp; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader, destination_cpu = a53-0]/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/vitis_classic/dj_47dr_platform/export/dj_47dr_platform/sw/dj_47dr_platform/boot/fsbl.elf
+	[destination_device = pl]/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/vitis_classic/dj_47dr_basic/_ide/bitstream/system_top.bit
+	[destination_cpu = a53-0]/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/vitis_classic/dj_47dr_basic/Release/dj_47dr_basic.elf
+}
