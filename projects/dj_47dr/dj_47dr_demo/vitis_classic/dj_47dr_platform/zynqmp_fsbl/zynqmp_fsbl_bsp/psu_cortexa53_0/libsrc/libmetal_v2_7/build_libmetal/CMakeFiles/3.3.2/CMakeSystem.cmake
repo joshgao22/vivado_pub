@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-4.18.0-553.el8_10.x86_64")
+set(CMAKE_HOST_SYSTEM "Linux-4.18.0-553.5.1.el8_10.x86_64")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "4.18.0-553.el8_10.x86_64")
+set(CMAKE_HOST_SYSTEM_VERSION "4.18.0-553.5.1.el8_10.x86_64")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/vitis_classic/dj_47dr_platform/zynqmp_fsbl/zynqmp_fsbl_bsp/psu_cortexa53_0/libsrc/libmetal_v2_7/src/libmetal/cmake/platforms/toolchain.cmake")

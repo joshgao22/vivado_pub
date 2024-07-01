@@ -57,7 +57,7 @@
                                     								
                                 </option>
                                 								
-                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.762825646" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="    -D __BAREMETAL__" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.762825646" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="     -D __BAREMETAL__" valueType="string"/>
                                 								
                                 <inputType id="xilinx.gnu.arm.a53.c.compiler.input.1638024366" name="C source files" superClass="xilinx.gnu.arm.a53.c.compiler.input"/>
                                 							
@@ -75,7 +75,7 @@
                                     								
                                 </option>
                                 								
-                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1342168895" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="    -D __BAREMETAL__" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1342168895" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="     -D __BAREMETAL__" valueType="string"/>
                                 							
                             </tool>
                             							
@@ -98,6 +98,8 @@
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilpm,-lxil,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilsecure,-lxil,-lgcc,-lc,--end-group"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group"/>
                                     								
@@ -134,6 +136,8 @@
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilpm,-lxil,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilsecure,-lxil,-lgcc,-lc,--end-group"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group"/>
                                     								
@@ -217,7 +221,7 @@
                                     								
                                 </option>
                                 								
-                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1917401148" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="    -D __BAREMETAL__" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1917401148" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="     -D __BAREMETAL__" valueType="string"/>
                                 								
                                 <inputType id="xilinx.gnu.arm.a53.c.compiler.input.1518787034" name="C source files" superClass="xilinx.gnu.arm.a53.c.compiler.input"/>
                                 							
@@ -235,7 +239,7 @@
                                     								
                                 </option>
                                 								
-                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1593375826" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="    -D __BAREMETAL__" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.inferred.swplatform.flags.1593375826" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value="     -D __BAREMETAL__" valueType="string"/>
                                 							
                             </tool>
                             							
@@ -258,6 +262,8 @@
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilpm,-lxil,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilsecure,-lxil,-lgcc,-lc,--end-group"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group"/>
                                     								
@@ -294,6 +300,8 @@
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilpm,-lxil,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxilsecure,-lxil,-lgcc,-lc,--end-group"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group"/>
                                     									
                                     <listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,-lmetal,--end-group"/>
                                     								

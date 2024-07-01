@@ -56,3 +56,31 @@ bsp reload
 platform config -updatehw {home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/system_top.xsa}
 platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/system_top.xsa}
 platform generate -domains 
+platform active {dj_47dr_platform}
+platform active {dj_47dr_platform}
+platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/system_top.xsa}
+bsp reload
+bsp setlib -name lwip220 -ver 1.0
+bsp config mem_size "524288"
+bsp config memp_n_pbuf "2048"
+bsp config memp_n_tcp_pcb "1024"
+bsp config memp_n_tcp_seg "1024"
+bsp config pbuf_pool_size "1096"
+bsp config pbuf_pool_size "4096"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate
+bsp config lwip_dhcp "true"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_psu_cortexa53_0 
+bsp config tcp_snd_buf "65535"
+bsp config tcp_wnd "65535"
+bsp config tcp_ip_rx_checksum_offload "true"
+bsp config tcp_ip_tx_checksum_offload "true"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_psu_cortexa53_0 

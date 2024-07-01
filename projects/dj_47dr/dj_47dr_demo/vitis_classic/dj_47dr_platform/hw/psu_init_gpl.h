@@ -29965,6 +29965,8 @@
 #define CRL_APB_RST_LPD_IOU2_OFFSET                                                0XFF5E0238
 #undef CRL_APB_RST_LPD_IOU2_OFFSET 
 #define CRL_APB_RST_LPD_IOU2_OFFSET                                                0XFF5E0238
+#undef CRL_APB_RST_LPD_IOU2_OFFSET 
+#define CRL_APB_RST_LPD_IOU2_OFFSET                                                0XFF5E0238
 #undef UART0_BAUD_RATE_DIVIDER_REG0_OFFSET 
 #define UART0_BAUD_RATE_DIVIDER_REG0_OFFSET                                        0XFF000034
 #undef UART0_BAUD_RATE_GEN_REG0_OFFSET 
@@ -30168,6 +30170,46 @@
 #define CRL_APB_RST_LPD_IOU2_I2C1_RESET_DEFVAL                 0x0017FFFF
 #define CRL_APB_RST_LPD_IOU2_I2C1_RESET_SHIFT                  10
 #define CRL_APB_RST_LPD_IOU2_I2C1_RESET_MASK                   0x00000400U
+
+/*
+* Block level reset
+*/
+#undef CRL_APB_RST_LPD_IOU2_TTC0_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU2_TTC0_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU2_TTC0_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU2_TTC0_RESET_DEFVAL                 0x0017FFFF
+#define CRL_APB_RST_LPD_IOU2_TTC0_RESET_SHIFT                  11
+#define CRL_APB_RST_LPD_IOU2_TTC0_RESET_MASK                   0x00000800U
+
+/*
+* Block level reset
+*/
+#undef CRL_APB_RST_LPD_IOU2_TTC1_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU2_TTC1_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU2_TTC1_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU2_TTC1_RESET_DEFVAL                 0x0017FFFF
+#define CRL_APB_RST_LPD_IOU2_TTC1_RESET_SHIFT                  12
+#define CRL_APB_RST_LPD_IOU2_TTC1_RESET_MASK                   0x00001000U
+
+/*
+* Block level reset
+*/
+#undef CRL_APB_RST_LPD_IOU2_TTC2_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU2_TTC2_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU2_TTC2_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU2_TTC2_RESET_DEFVAL                 0x0017FFFF
+#define CRL_APB_RST_LPD_IOU2_TTC2_RESET_SHIFT                  13
+#define CRL_APB_RST_LPD_IOU2_TTC2_RESET_MASK                   0x00002000U
+
+/*
+* Block level reset
+*/
+#undef CRL_APB_RST_LPD_IOU2_TTC3_RESET_DEFVAL 
+#undef CRL_APB_RST_LPD_IOU2_TTC3_RESET_SHIFT 
+#undef CRL_APB_RST_LPD_IOU2_TTC3_RESET_MASK 
+#define CRL_APB_RST_LPD_IOU2_TTC3_RESET_DEFVAL                 0x0017FFFF
+#define CRL_APB_RST_LPD_IOU2_TTC3_RESET_SHIFT                  14
+#define CRL_APB_RST_LPD_IOU2_TTC3_RESET_MASK                   0x00004000U
 
 /*
 * Block level reset
