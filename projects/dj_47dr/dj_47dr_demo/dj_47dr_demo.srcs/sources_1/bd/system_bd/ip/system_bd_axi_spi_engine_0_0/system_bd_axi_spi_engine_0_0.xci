@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "system_bd_axi_spi_engine_0_0",
-    "cell_name": "adi_spi_engine/axi_spi_engine",
+    "cell_name": "axi_spi_engine/axi_spi_engine",
     "component_reference": "analog.com:user:axi_spi_engine:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../dj_47dr_demo.gen/sources_1/bd/system_bd/ip/system_bd_axi_spi_engine_0_0",
