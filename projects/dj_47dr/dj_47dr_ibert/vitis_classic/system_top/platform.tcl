@@ -1,0 +1,42 @@
+# 
+# Usage: To re-create this platform project launch xsct with below options.
+# xsct /home/josh/dj_47dr_ibert/vitis_classic/system_top/platform.tcl
+# 
+# OR launch xsct and run below command.
+# source /home/josh/dj_47dr_ibert/vitis_classic/system_top/platform.tcl
+# 
+# To create the platform in a different location, modify the -out option of "platform create" command.
+# -out option specifies the output directory of the platform project.
+
+platform create -name {system_top}\
+-hw {/home/josh/dj_47dr_ibert/system_top.xsa}\
+-arch {64-bit} -fsbl-target {psu_cortexa53_0} -out {/home/josh/dj_47dr_ibert/vitis_classic}
+
+platform write
+domain create -name {standalone_psu_cortexa53_0} -display-name {standalone_psu_cortexa53_0} -os {standalone} -proc {psu_cortexa53_0} -runtime {cpp} -arch {64-bit} -support-app {hello_world}
+platform generate -domains 
+platform active {system_top}
+domain active {zynqmp_fsbl}
+domain active {zynqmp_pmufw}
+domain active {standalone_psu_cortexa53_0}
+platform generate -quick
+platform generate
+platform config -updatehw {/home/josh/dj_47dr_ibert/system_top.xsa}
+platform generate -domains 
+bsp reload
+bsp config stdin "psu_coresight_0"
+bsp config stdout "psu_coresight_0"
+bsp write
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_psu_cortexa53_0 
+platform active {system_top}
+platform config -updatehw {/home/josh/dj_47dr_ibert/system_top.xsa}
+platform generate -domains 
+platform active {system_top}
+bsp reload
+bsp config stdin "psu_coresight_0"
+bsp reload
+platform generate -domains 
+platform active {system_top}
+platform generate -domains 
