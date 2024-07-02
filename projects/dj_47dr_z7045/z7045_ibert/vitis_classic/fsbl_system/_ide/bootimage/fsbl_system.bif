@@ -1,0 +1,12 @@
+/* /tmp/bootgen_fsbl_system11418799061685664163/sd_card_temp/boot.bif */
+/* Command to create bitstream .bin file:       */
+/*   bootgen -image <bif_file> -split bin -w    */
+/* Command to create BOOT.BIN file:             */
+/*   bootgen  -image <bif_file> -w -o i BOOT.BIN */
+/*dj_z7045_platform*/
+the_ROM_image:
+{
+ [bootloader] /home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr_z7045/z7045_ibert/vitis_classic/dj_z7045_platform/export/dj_z7045_platform/sw/dj_z7045_platform/boot/fsbl.elf
+ /home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr_z7045/z7045_ibert/vitis_classic/fsbl/_ide/bitstream/system_top.bit
+ /home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr_z7045/z7045_ibert/vitis_classic/fsbl/Release/fsbl.elf
+}
