@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="dj_47dr_mts" location="/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/vitis_classic/dj_47dr_mts" platform="/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/vitis_classic/dj_47dr_platform/export/dj_47dr_platform/dj_47dr_platform.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="dj_47dr_mts_system" sysConfig="dj_47dr_platform" runtime="C/C++" cpu="standalone_psu_cortexa53_0" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="c6670d350bc5ad3b0c7e7d49c8d56f6d">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.158563212">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.282746296" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
