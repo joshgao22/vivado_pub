@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9F3174A6C2346610",
+      "boundary_crc": "0x7879DD10C9E21201",
       "device": "xczu47dr-ffve1156-2-i",
       "gen_directory": "../../../../dj_47dr_lmx.gen/sources_1/bd/system_bd",
       "name": "system_bd",
@@ -35,8 +35,7 @@
         "xlconstant_0": ""
       },
       "xlconcat_0": "",
-      "zynq_ultra_ps_e": "",
-      "system_ila_0": ""
+      "zynq_ultra_ps_e": ""
     },
     "interface_ports": {
       "spi": {
@@ -51,7 +50,7 @@
           "sdi": {
             "physical_name": "spi_sdi",
             "direction": "I",
-            "left": "2",
+            "left": "0",
             "right": "0"
           },
           "sdo": {
@@ -3173,7 +3172,12 @@
             "ip_revision": "1",
             "xci_name": "system_bd_axi_spi_engine_0_0",
             "xci_path": "ip/system_bd_axi_spi_engine_0_0/system_bd_axi_spi_engine_0_0.xci",
-            "inst_hier_path": "axi_spi_engine/axi_spi_engine"
+            "inst_hier_path": "axi_spi_engine/axi_spi_engine",
+            "parameters": {
+              "NUM_OF_SDI": {
+                "value": "1"
+              }
+            }
           },
           "spi_engine_execution": {
             "vlnv": "analog.com:user:spi_engine_execution:1.0",
@@ -3186,7 +3190,7 @@
                 "value": "3"
               },
               "NUM_OF_SDI": {
-                "value": "3"
+                "value": "1"
               }
             }
           }
@@ -3202,12 +3206,7 @@
             "interface_ports": [
               "spi_engine_execution/spi",
               "spi"
-            ],
-            "hdl_attributes": {
-              "DEBUG": {
-                "value": "true"
-              }
-            }
+            ]
           },
           "axi_spi_engine_spi_engine_ctrl": {
             "interface_ports": [
@@ -4366,43 +4365,6 @@
             }
           }
         }
-      },
-      "system_ila_0": {
-        "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "ip_revision": "17",
-        "xci_name": "system_bd_system_ila_0_0",
-        "xci_path": "ip/system_bd_system_ila_0_0/system_bd_system_ila_0_0.xci",
-        "inst_hier_path": "system_ila_0",
-        "parameters": {
-          "C_ADV_TRIGGER": {
-            "value": "true"
-          },
-          "C_DATA_DEPTH": {
-            "value": "131072"
-          },
-          "C_EN_STRG_QUAL": {
-            "value": "1"
-          },
-          "C_MON_TYPE": {
-            "value": "INTERFACE"
-          },
-          "C_NUM_MONITOR_SLOTS": {
-            "value": "1"
-          },
-          "C_SLOT_0_INTF_TYPE": {
-            "value": "analog.com:interface:spi_engine_rtl:1.0"
-          },
-          "C_SLOT_0_TYPE": {
-            "value": "0"
-          }
-        },
-        "interface_ports": {
-          "SLOT_0_SPI_ENGINE": {
-            "mode": "Monitor",
-            "vlnv_bus_definition": "analog.com:interface:spi_engine:1.0",
-            "vlnv": "analog.com:interface:spi_engine_rtl:1.0"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -4415,17 +4377,8 @@
       "adi_spi_engine_spi_0": {
         "interface_ports": [
           "spi",
-          "axi_spi_engine/spi",
-          "system_ila_0/SLOT_0_SPI_ENGINE"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
+          "axi_spi_engine/spi"
+        ]
       },
       "dac2_clk_1": {
         "interface_ports": [
@@ -4920,8 +4873,7 @@
           "ps8_0_axi_periph/ACLK",
           "usp_rf_data_converter/s_axi_aclk",
           "ps8_0_axi_periph/M01_ACLK",
-          "zynq_ultra_ps_e/maxihpm0_lpd_aclk",
-          "system_ila_0/clk"
+          "zynq_ultra_ps_e/maxihpm0_lpd_aclk"
         ]
       },
       "zynq_ultra_ps_e_pl_resetn0": {

@@ -6,11 +6,11 @@
    "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port s_axi -pg 1 -lvl 0 -x 0 -y -270 -defaultsOSRD
-preplace port spi -pg 1 -lvl 3 -x 730 -y -250 -defaultsOSRD
+preplace port spi -pg 1 -lvl 3 -x 740 -y -250 -defaultsOSRD
 preplace port port-id_s_axi_aclk -pg 1 -lvl 0 -x 0 -y -250 -defaultsOSRD
 preplace port port-id_s_axi_aresetn -pg 1 -lvl 0 -x 0 -y -230 -defaultsOSRD
-preplace port port-id_active -pg 1 -lvl 3 -x 730 -y -230 -defaultsOSRD
-preplace port port-id_irq -pg 1 -lvl 3 -x 730 -y -320 -defaultsOSRD
+preplace port port-id_active -pg 1 -lvl 3 -x 740 -y -230 -defaultsOSRD
+preplace port port-id_irq -pg 1 -lvl 3 -x 740 -y -320 -defaultsOSRD
 preplace inst axi_spi_engine -pg 1 -lvl 1 -x 340 -y -240 -defaultsOSRD
 preplace inst spi_engine_execution -pg 1 -lvl 2 -x 600 -y -240 -defaultsOSRD
 preplace netloc axi_spi_engine_irq 1 1 2 480J -320 NJ
@@ -21,8 +21,8 @@ preplace netloc spi_engine_execution_active 1 2 1 NJ -230
 preplace netloc Conn1 1 0 1 NJ -270
 preplace netloc Conn2 1 2 1 NJ -250
 preplace netloc axi_spi_engine_spi_engine_ctrl 1 1 1 N -260
-levelinfo -pg 1 0 340 600 730
-pagesize -pg 1 -db -bbox -sgen -150 -630 830 180
+levelinfo -pg 1 0 340 600 740
+pagesize -pg 1 -db -bbox -sgen -150 -630 840 180
 "
 }
 0
