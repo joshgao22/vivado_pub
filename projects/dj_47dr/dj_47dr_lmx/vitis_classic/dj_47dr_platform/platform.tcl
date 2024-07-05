@@ -30,3 +30,8 @@ platform generate
 platform generate -domains zynqmp_fsbl 
 platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/system_top.xsa}
 platform generate -domains 
+platform active {dj_47dr_platform}
+platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/system_top.xsa}
+platform generate -domains 
+platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/system_top.xsa}
+platform generate -domains 

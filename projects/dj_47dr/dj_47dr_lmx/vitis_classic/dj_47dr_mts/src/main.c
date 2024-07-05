@@ -200,22 +200,23 @@ int main(void)
 		}
 	}
 
-    // check pll2 lock status
-    Status = lmk04828_read(lmk04828_inst, 0x0182, &Lmk04828Read);
+	// check pll1 lock status
+	Status = lmk04828_read(lmk04828_inst, 0x0182, &Lmk04828Read);
 	if ((Lmk04828Read & 0x02) == 0x02) {
-		xil_printf("LMK04828 PLL1 Locked.\r\n");
+		xil_printf("[LMK04828] PLL1 Locked.\r\n");
 	}
 	else {
-		xil_printf("LMK04828 PLL1 NOT lock!\r\n");
+		xil_printf("[LMK04828] PLL1 NOT lock. It takes a while for PLL1 to lock. Lock status is shown on LED.\r\n");
 	}
 
-    Status = lmk04828_read(lmk04828_inst, 0x0183, &Lmk04828Read);
-    if ((Lmk04828Read & 0x02) == 0x02) {
-        xil_printf("LMK04828 PLL2 Locked.\r\n");
-    }
-    else {
-        xil_printf("LMK04828 PLL2 NOT lock!\r\n");
-    }
+	// check pll2 lock status
+	Status = lmk04828_read(lmk04828_inst, 0x0183, &Lmk04828Read);
+	if ((Lmk04828Read & 0x02) == 0x02) {
+		xil_printf("[LMK04828] PLL2 Locked.\r\n");
+	}
+	else {
+		xil_printf("[LMK04828] PLL2 NOT lock!\r\n");
+	}
 
 	/**********************************************************/
 	/************* LMX2594 for DAC Configuration **************/
@@ -230,16 +231,18 @@ int main(void)
 		}
 	}
 
-    // check vco lock status
-    Status = lmx2594_read(lmx2594_dac_inst, 110, &Lmx2594Read);
-    if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
-        xil_printf("LMX2594 for DAC Config Done.\r\n");
-    }
-    else {
-        xil_printf("LMX2594 for DAC not lock!\r\n");
-    }
+	// check vco lock status
+	Status = lmx2594_read(lmx2594_dac_inst, 110, &Lmx2594Read);
+	if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
+		xil_printf("[DAC LMX2594] Config Done.\r\n");
+	}
+	else {
+		xil_printf("[DAC LMX2594] not lock!\r\n");
+	}
 
-    Status = lmx2594_write(lmx2594_dac_inst, 0x00, 0x259C);
+	// set mux out to lock status
+	Status = lmx2594_write(lmx2594_dac_inst, 0x00, 0x259C);
+	xil_printf("[DAC LMX2594] SPI readback disabled, lock status is shown on LED.\r\n");
 
 	/**********************************************************/
 	/************* LMX2594 for ADC Configuration **************/
@@ -254,21 +257,21 @@ int main(void)
 		}
 	}
 
-	Status = lmx2594_read(lmx2594_adc_inst, 0, &Lmx2594Read);
+	// check vco lock status
+	Status = lmx2594_read(lmx2594_adc_inst, 110, &Lmx2594Read);
+	if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
+		xil_printf("[ADC LMX2594] Config Done.\r\n");
+	}
+	else {
+		xil_printf("[ADC LMX2594] not lock!\r\n");
+	}
 
-    // check vco lock status
-    Status = lmx2594_read(lmx2594_adc_inst, 110, &Lmx2594Read);
-    if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
-        xil_printf("LMX2594 for ADC Config Done.\r\n");
-    }
-    else {
-        xil_printf("LMX2594 for ADC not lock!\r\n");
-    }
-
-    Status = lmx2594_write(lmx2594_adc_inst, 0x00, 0x259C);
+	// set mux out to lock status
+	Status = lmx2594_write(lmx2594_adc_inst, 0x00, 0x259C);
+	xil_printf("[ADC LMX2594] SPI readback disabled, lock status is shown on LED.\r\n");
 
 
-	//add
+	// Mts Example
 	printf("RFdc MTS Example Test\r\n");
 	/*
 	 * Specify the Device ID that is generated in xparameters.h.
@@ -286,7 +289,7 @@ int main(void)
 	//end add
 
 
-	print("Done.\n");
+	print("Done.\r\n");
 
 	return 0;
 }
@@ -325,7 +328,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 	struct metal_init_params init_param = METAL_INIT_DEFAULTS;
 
 	if (metal_init(&init_param)) {
-		printf("ERROR: Failed to run metal initialization\n");
+		printf("ERROR: Failed to run metal initialization\r\n");
 		return XRFDC_FAILURE;
 	}
 	metal_set_log_handler(my_log_handler);
@@ -346,7 +349,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 
     status = XRFdc_CfgInitialize(RFdcInstPtr, ConfigPtr);
     if (status != XRFDC_SUCCESS) {
-        printf("RFdc Init Failure\n\r");
+        printf("RFdc Init Failure\r\n\r");
     }
 
     //add
@@ -354,7 +357,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 
     //end add
 
-    printf("=== RFdc Initialized - Running Multi-tile Sync ===\n");
+    printf("=== RFdc Initialized - Running Multi-tile Sync ===\r\n");
 
     /* ADC MTS Settings */
     XRFdc_MultiConverter_Sync_Config ADC_Sync_Config;
@@ -366,7 +369,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 
 
     /* Run MTS for the ADC & DAC */
-    printf("\n=== Run DAC Sync ===\n");
+    printf("\r\n=== Run DAC Sync ===\r\n");
 
     /* Initialize DAC MTS Settings */
     XRFdc_MultiConverter_Init (&DAC_Sync_Config, 0, 0, XRFDC_TILE_ID0);
@@ -375,13 +378,13 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
     status_dac = XRFdc_MultiConverter_Sync(RFdcInstPtr, XRFDC_DAC_TILE,
 					&DAC_Sync_Config);
     if(status_dac == XRFDC_MTS_OK){
-	printf("INFO : DAC Multi-Tile-Sync completed successfully\n");
+	printf("INFO : DAC Multi-Tile-Sync completed successfully\r\n");
     }else{
-	printf("ERROR : DAC Multi-Tile-Sync did not complete successfully. Error code is %u \n",status_dac);
+	printf("ERROR : DAC Multi-Tile-Sync did not complete successfully. Error code is %u \r\n",status_dac);
 	return status_dac;
     }
 
-    printf("\n=== Run ADC Sync ===\n");
+    printf("\r\n=== Run ADC Sync ===\r\n");
 
     /* Initialize ADC MTS Settings */
     XRFdc_MultiConverter_Init (&ADC_Sync_Config, 0, 0, XRFDC_TILE_ID0);
@@ -390,9 +393,9 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
     status_adc = XRFdc_MultiConverter_Sync(RFdcInstPtr, XRFDC_ADC_TILE,
 					&ADC_Sync_Config);
     if(status_adc == XRFDC_MTS_OK){
-	printf("INFO : ADC Multi-Tile-Sync completed successfully\n");
+	printf("INFO : ADC Multi-Tile-Sync completed successfully\r\n");
     }else{
-		printf("ERROR : ADC Multi-Tile-Sync did not complete successfully. Error code is %u \n",status_adc);
+		printf("ERROR : ADC Multi-Tile-Sync did not complete successfully. Error code is %u \r\n",status_adc);
 		return status_adc;
     }
 
@@ -400,12 +403,12 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
      * Report Overall Latency in T1 (Sample Clocks) and
      * Offsets (in terms of PL words) added to each FIFO
      */
-     printf("\n\n=== Multi-Tile Sync Report ===\n");
+     printf("\r\n\r\n=== Multi-Tile Sync Report ===\r\n");
      for(i=0; i<4; i++) {
          if((1<<i)&DAC_Sync_Config.Tiles) {
                  XRFdc_GetInterpolationFactor(RFdcInstPtr, i, 0, &factor);
                  printf("DAC%d: Latency(T1) =%3d, Adjusted Delay"
-				 "Offset(T%d) =%3d\n", i, DAC_Sync_Config.Latency[i],
+				 "Offset(T%d) =%3d\r\n", i, DAC_Sync_Config.Latency[i],
 						 factor, DAC_Sync_Config.Offset[i]);
          }
      }
@@ -413,7 +416,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
          if((1<<i)&ADC_Sync_Config.Tiles) {
                  XRFdc_GetDecimationFactor(RFdcInstPtr, i, 0, &factor);
                  printf("ADC%d: Latency(T1) =%3d, Adjusted Delay"
-				 "Offset(T%d) =%3d\n", i, ADC_Sync_Config.Latency[i],
+				 "Offset(T%d) =%3d\r\n", i, ADC_Sync_Config.Latency[i],
 						 factor, ADC_Sync_Config.Offset[i]);
          }
      }
@@ -443,7 +446,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 //      for(Tile_Id=0; Tile_Id<4; Tile_Id++) {
 //      	status = XRFdc_DynamicPLLConfig(RFdcInstPtr, 1, Tile_Id, XRFDC_EXTERNAL_CLK, 3932.16, 3932.16);
 //      	    if (status != XRFDC_SUCCESS) {
-//      	        printf("XRFdc DAC DynamicPLLConfig Failure\n\r");
+//      	        printf("XRFdc DAC DynamicPLLConfig Failure\r\n\r");
 //      	    }
 //      }
 
@@ -453,7 +456,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 //              {
 //        	   status = XRFdc_SetInterpolationFactor(RFdcInstPtr, i, j, XRFDC_INTERP_DECIM_16X);
 //         	    if (status != XRFDC_SUCCESS) {
-//         	        printf("XRFdc DAC SetInterpolationFactor Failure\n\r");
+//         	        printf("XRFdc DAC SetInterpolationFactor Failure\r\n\r");
 //         	    }
 //              }
 //      }
@@ -466,12 +469,12 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
               {
               	status = XRFdc_SetMixerSettings(RFdcInstPtr, XRFDC_DAC_TILE, i, j, &DAC_Mixer_Settings);
               	if (status != XRFDC_SUCCESS) {
-              	printf("XRFdc_SetMixerSettings FAILED \n\n");
+              	printf("XRFdc_SetMixerSettings FAILED \r\n\r\n");
               	//return XRFDC_FAILURE;
               	}
                 status = XRFdc_ResetNCOPhase(RFdcInstPtr, XRFDC_DAC_TILE, i, j);
                       	if (status != XRFDC_SUCCESS) {
-                      	printf("XRFdc_ResetNCOPhase FAILED \n\n");
+                      	printf("XRFdc_ResetNCOPhase FAILED \r\n\r\n");
                       		//return XRFDC_FAILURE;
                          }
               }
@@ -493,7 +496,7 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
 //      for(Tile_Id=0; Tile_Id<4; Tile_Id++) {
 //      	status = XRFdc_DynamicPLLConfig(RFdcInstPtr, 0, Tile_Id, XRFDC_EXTERNAL_CLK, 3932.16, 3932.16);
 //      	    if (status != XRFDC_SUCCESS) {
-//      	        printf("XRFdc ADC DynamicPLLConfig Failure\n\r");
+//      	        printf("XRFdc ADC DynamicPLLConfig Failure\r\n\r");
 //      	    }
 //      }
 
@@ -504,12 +507,12 @@ int RFdcMTS_Example(u16 RFdcDeviceId)
               {
               	status = XRFdc_SetMixerSettings(RFdcInstPtr, XRFDC_ADC_TILE, i, j, &ADC_Mixer_Settings);
               	if (status != XRFDC_SUCCESS) {
-              	printf("XRFdc_SetMixerSettings FAILED \n\n");
+              	printf("XRFdc_SetMixerSettings FAILED \r\n\r\n");
               	//return XRFDC_FAILURE;
               	}
                           		status = XRFdc_ResetNCOPhase(RFdcInstPtr, XRFDC_ADC_TILE, i, j);
                           		if (status != XRFDC_SUCCESS) {
-                          		printf("XRFdc_ResetNCOPhase FAILED \n\n");
+                          		printf("XRFdc_ResetNCOPhase FAILED \r\n\r\n");
                           		//return XRFDC_FAILURE;
                           		}
               }

@@ -6,7 +6,7 @@
 >
 > Board: RFSOC_47DR_Z7045
 >
-> Device: xczu47dr-2ffve1156i(u15), lmk04828(u66), lmk2594(u67), lmk2594(u68)
+> Device: xczu47dr-2ffve1156i(u15), lmk04828(u66), lmx2594(u67), lmx2594(u68)
 >
 > Date: 2024/07/04
 >
@@ -23,8 +23,8 @@
    - 配置了 LMK04828，使用 10 MHz 输入时钟和 122.88 MHz VCXO 完成配置，PLL2 锁定，输出时钟频率为 245.76 MHz。
    - 配置了两片 LMK2594，RF 部分使用外部采样时钟，采样率为 4.9152 Gbps。
    - 参考 RFSoC Eval 板卡完成了多通道同步，输出结果显示 RF-ADC 和 RF-DAC 均完成同步。
+   - 降低 SPI 速率后 LMX2594 回读正常。
 
 3. 存在的问题
 
    - LMK04828 PLL1 锁定时间较长（约 1 分钟），单独配置 LMK04828 时同样存在该问题。
-   - LMK2594 SPI 回读异常，ILA 可以看见回读，但是 PS 程序中无回读，问题待查；通过 LED 灯判断两片 LMK2594 均锁定。

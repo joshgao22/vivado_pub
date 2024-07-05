@@ -24,9 +24,9 @@ set mode [expr [mrd -value 0xFF5E0200] & 0xf]
 targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && jtag_device_ctx=="jsn-JTAG-HS1-210512180081-5ba00477-0"}
 rst -processor
 dow /home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/vitis_classic/dj_47dr_platform/export/dj_47dr_platform/sw/dj_47dr_platform/boot/fsbl.elf
-set bp_17_50_fsbl_bp [bpadd -addr &XFsbl_Exit]
+set bp_15_53_fsbl_bp [bpadd -addr &XFsbl_Exit]
 con -block -timeout 60
-bpremove $bp_17_50_fsbl_bp
+bpremove $bp_15_53_fsbl_bp
 targets -set -nocase -filter {name =~ "*A53*#0" && jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && jtag_device_ctx=="jsn-JTAG-HS1-210512180081-5ba00477-0"}
 rst -processor
 dow /home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_lmx/vitis_classic/dj_47dr_mts/Debug/dj_47dr_mts.elf

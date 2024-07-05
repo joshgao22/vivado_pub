@@ -118,21 +118,22 @@ int main(void)
 		}
 	}
 
-    // check pll2 lock status
+    // check pll1 lock status
     Status = lmk04828_read(lmk04828_inst, 0x0182, &Lmk04828Read);
 	if ((Lmk04828Read & 0x02) == 0x02) {
-		xil_printf("LMK04828 PLL1 Locked.\r\n");
+		xil_printf("[LMK04828] PLL1 Locked.\r\n");
 	}
 	else {
-		xil_printf("LMK04828 PLL1 NOT lock!\r\n");
+		xil_printf("[LMK04828] PLL1 NOT lock. It takes a while for PLL1 to lock. Lock status is shown on LED.\r\n");
 	}
 
+	// check pll2 lock status
     Status = lmk04828_read(lmk04828_inst, 0x0183, &Lmk04828Read);
     if ((Lmk04828Read & 0x02) == 0x02) {
-        xil_printf("LMK04828 PLL2 Locked.\r\n");
+        xil_printf("[LMK04828] PLL2 Locked.\r\n");
     }
     else {
-        xil_printf("LMK04828 PLL2 NOT lock!\r\n");
+        xil_printf("[LMK04828] PLL2 NOT lock!\r\n");
     }
 
 	/**********************************************************/
@@ -151,13 +152,15 @@ int main(void)
     // check vco lock status
     Status = lmx2594_read(lmx2594_dac_inst, 110, &Lmx2594Read);
     if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
-        xil_printf("LMX2594 for DAC Config Done.\r\n");
+        xil_printf("[DAC LMX2594] Config Done.\r\n");
     }
     else {
-        xil_printf("LMX2594 for DAC not lock!\r\n");
+        xil_printf("[DAC LMX2594] not lock!\r\n");
     }
 
+    // set mux out to lock status
     Status = lmx2594_write(lmx2594_dac_inst, 0x00, 0x259C);
+    xil_printf("[DAC LMX2594] SPI readback disabled, lock status is shown on LED.\r\n");
 
 	/**********************************************************/
 	/************* LMX2594 for ADC Configuration **************/
@@ -172,18 +175,18 @@ int main(void)
 		}
 	}
 
-	Status = lmx2594_read(lmx2594_adc_inst, 0, &Lmx2594Read);
-
     // check vco lock status
     Status = lmx2594_read(lmx2594_adc_inst, 110, &Lmx2594Read);
     if (((Lmx2594Read >> 9) & 0x03) == 0x02) {
-        xil_printf("LMX2594 for ADC Config Done.\r\n");
+        xil_printf("[ADC LMX2594] Config Done.\r\n");
     }
     else {
-        xil_printf("LMX2594 for ADC not lock!\r\n");
+        xil_printf("[ADC LMX2594] not lock!\r\n");
     }
 
+    // set mux out to lock status
     Status = lmx2594_write(lmx2594_adc_inst, 0x00, 0x259C);
+    xil_printf("[ADC LMX2594] SPI readback disabled, lock status is shown on LED.\r\n");
 
 	print("Done.\n");
 

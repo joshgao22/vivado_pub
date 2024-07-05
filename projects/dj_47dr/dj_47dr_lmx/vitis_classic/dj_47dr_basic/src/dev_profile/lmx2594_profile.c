@@ -31,7 +31,7 @@ struct lmx2594_init_param lmx2594_dac_init_param = {
 	.spi_init = &lmx2594_dac_spi_init
 };
 
-const uint32_t lmx2594_default_config_len = 110;
+const uint32_t lmx2594_default_config_len = 82;
 const struct lmx2594_config lmx2594_default_config[] = {
 	// 0 ~ 78: General configuration
 	// 79 ~ 106: Ramping configuration
@@ -53,34 +53,34 @@ const struct lmx2594_config lmx2594_default_config[] = {
 	{  0, 0x0000},
 
 	// Reverse order programming
-	{106, 0x0000},
-	{105, 0x0021},
-	{104, 0x0000},
-	{103, 0xD555},
-	{102, 0x3F97},
-	{101, 0x0011},
-	{100, 0x0000},
-	{ 99, 0x2AAB},
-	{ 98, 0x01A0},
-	{ 97, 0x0888},
-	{ 96, 0x0000},
-	{ 95, 0x0000}, // fixed
-	{ 94, 0x0000}, // fixed
-	{ 93, 0x0000}, // fixed
-	{ 92, 0x0000}, // fixed
-	{ 91, 0x0000}, // fixed
-	{ 90, 0x0000}, // fixed
-	{ 89, 0x0000}, // fixed
-	{ 88, 0x0000}, // fixed
-	{ 87, 0x0000}, // fixed
-	{ 86, 0x5879},
-	{ 85, 0xEC58},
-	{ 84, 0x0001},
-	{ 83, 0x54C9},
-	{ 82, 0x2961},
-	{ 81, 0x0000},
-	{ 80, 0x4000},
-	{ 79, 0x001F},
+//	{106, 0x0000},
+//	{105, 0x0021},
+//	{104, 0x0000},
+//	{103, 0xD555},
+//	{102, 0x3F97},
+//	{101, 0x0011},
+//	{100, 0x0000},
+//	{ 99, 0x2AAB},
+//	{ 98, 0x01A0},
+//	{ 97, 0x0888},
+//	{ 96, 0x0000},
+//	{ 95, 0x0000}, // fixed
+//	{ 94, 0x0000}, // fixed
+//	{ 93, 0x0000}, // fixed
+//	{ 92, 0x0000}, // fixed
+//	{ 91, 0x0000}, // fixed
+//	{ 90, 0x0000}, // fixed
+//	{ 89, 0x0000}, // fixed
+//	{ 88, 0x0000}, // fixed
+//	{ 87, 0x0000}, // fixed
+//	{ 86, 0x5879},
+//	{ 85, 0xEC58},
+//	{ 84, 0x0001},
+//	{ 83, 0x54C9},
+//	{ 82, 0x2961},
+//	{ 81, 0x0000},
+//	{ 80, 0x4000},
+//	{ 79, 0x001F},
 	{ 78, 0x0003}, // [8:1] VCO_CAPCTRL_STRT
 	{ 77, 0x0000}, // fixed
 	{ 76, 0x000C}, // fixed
