@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF2A321F5CFA5E97D",
+      "boundary_crc": "0x15EB8843C4739D6C",
       "device": "xczu47dr-ffve1156-2-i",
       "gen_directory": "../../../../dj_47dr_demo.gen/sources_1/bd/system_bd",
       "name": "system_bd",
@@ -50,7 +50,7 @@
           "sdi": {
             "physical_name": "spi_sdi",
             "direction": "I",
-            "left": "2",
+            "left": "0",
             "right": "0"
           },
           "sdo": {
@@ -3173,7 +3173,7 @@
                 "value": "3"
               },
               "NUM_OF_SDI": {
-                "value": "3"
+                "value": "1"
               }
             }
           }

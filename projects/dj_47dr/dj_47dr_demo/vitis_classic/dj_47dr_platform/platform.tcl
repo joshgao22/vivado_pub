@@ -84,3 +84,8 @@ bsp write
 bsp reload
 catch {bsp regenerate}
 platform generate -domains standalone_psu_cortexa53_0 
+platform active {dj_47dr_platform}
+platform generate
+platform active {dj_47dr_platform}
+platform config -updatehw {/home/josh/Workspace/vivado/vivado_pub/projects/dj_47dr/dj_47dr_demo/system_top.xsa}
+platform generate -domains 

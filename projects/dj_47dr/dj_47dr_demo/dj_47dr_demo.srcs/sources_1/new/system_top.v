@@ -113,7 +113,7 @@ wire sys_rstn;
 // spi interface
 wire spi_sclk      ;
 wire [2:0] spi_cs  ;
-wire [2:0] spi_sdi ;
+reg spi_sdi        ;
 wire spi_sdo       ;
 wire spi_sdo_t     ;
 wire spi_three_wire;
@@ -121,18 +121,24 @@ wire spi_active    ;
 
 assign lmk_spi_sck = spi_sclk;
 assign lmk_spi_cs = spi_cs[0];
-assign spi_sdi[0] = spi_three_wire ? lmk_spi_mosi : lmk_spi_miso;
 assign lmk_spi_mosi = spi_sdo_t ? 1'bz : spi_sdo;
 
 assign lmx_adc_spi_sck = spi_sclk;
 assign lmx_adc_spi_cs = spi_cs[1];
-assign spi_sdi[1] = spi_three_wire ? lmx_adc_spi_mosi : lmx_adc_spi_miso;
 assign lmx_adc_spi_mosi = spi_sdo_t ? 1'bz : spi_sdo;
 
 assign lmx_dac_spi_sck = spi_sclk;
 assign lmx_dac_spi_cs = spi_cs[2];
-assign spi_sdi[2] = spi_three_wire ? lmx_dac_spi_mosi : lmx_dac_spi_miso;
 assign lmx_dac_spi_mosi = spi_sdo_t ? 1'bz : spi_sdo;
+
+always @(*) begin
+    case (spi_cs)
+        3'b110:  spi_sdi = spi_three_wire ? lmk_spi_mosi : lmk_spi_miso;
+        3'b101:  spi_sdi = spi_three_wire ? lmx_adc_spi_mosi : lmx_adc_spi_miso;
+        3'b011:  spi_sdi = spi_three_wire ? lmx_dac_spi_mosi : lmx_dac_spi_miso;
+        default: spi_sdi = 1'bz;
+    endcase
+end
 
 // -----------------------------------------------------------------------------
 // ADC Tile & Channel Mapping (Dual RF-ADC)

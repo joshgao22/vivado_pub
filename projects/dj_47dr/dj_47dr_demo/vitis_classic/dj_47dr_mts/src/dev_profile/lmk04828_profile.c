@@ -17,8 +17,9 @@ struct lmk04828_init_param lmk04828_default_init_param = {
 	.spi_init = &lmk04828_spi_init
 };
 
-const uint32_t lmk04828_default_config_len = 136;
+const uint32_t lmk04828_default_config_len = 137;
 const struct lmk04828_config lmk04828_default_config[] = {
+	{0x0000, 0x90}, // [7] reset; [4] 3-wire mode disabled
 	{0x0000, 0x10}, // [7] normal operation; [4] 3-wire mode disabled
 	{0x0002, 0x00}, // [0] normal operation
 	{0x0003, 0x06}, // [7-0] product device type, read only, default: 6
