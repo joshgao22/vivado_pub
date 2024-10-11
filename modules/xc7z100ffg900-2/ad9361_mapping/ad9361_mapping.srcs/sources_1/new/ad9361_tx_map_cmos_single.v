@@ -41,7 +41,7 @@ module ad9361_tx_map_cmos_single
     output  [11:0]  tx_data
 );
 
-genvar m;
+genvar mm;
 
 // inout data fifo
 wire [11:0] tx_fifo_i;
@@ -82,35 +82,35 @@ assign clk_out = clk_in;
 
 // output tx frame to port
 ODDR #(
-    .DDR_CLK_EDGE   ("SAME_EDGE"    ),
-    .INIT           (1'b0           ),
-    .SRTYPE         ("ASYNC"        )
+    .DDR_CLK_EDGE   ("SAME_EDGE"    ), // "OPPOSITE_EDGE" or "SAME_EDGE"
+    .INIT           (1'b0           ), // Initial value of Q: 1'b0 or 1'b1
+    .SRTYPE         ("ASYNC"        )  // Set/Reset type: "SYNC" or "ASYNC"
 ) u_tx_frame_oddr (
-    .CE             (1'b1           ),
-    .R              (1'b0           ),
-    .S              (1'b0           ),
-    .C              (clk_in         ),
-    .D1             (tx_frame_i     ),
-    .D2             (tx_frame_q     ),
-    .Q              (tx_frame       )
+    .CE             (1'b1           ), // 1-bit clock enable input
+    .R              (1'b0           ), // 1-bit reset
+    .S              (1'b0           ), // 1-bit set
+    .C              (clk_in         ), // 1-bit clock input
+    .D1             (tx_frame_i     ), // 1-bit data input (positive edge)
+    .D2             (tx_frame_q     ), // 1-bit data input (negative edge)
+    .Q              (tx_frame       )  // 1-bit DDR output
 );
 
 // output tx data to port
 generate
-for (m=0; m<12; m=m+1) begin: tx_data_oddr
+for (mm = 0; mm < 12; mm = mm + 1) begin: tx_data_oddr
 
 ODDR #(
-    .DDR_CLK_EDGE   ("SAME_EDGE"   ),
-    .INIT           (1'b0          ),
-    .SRTYPE         ("ASYNC"       )
-) u_tx_data_oddr  (
-    .CE             (1'b1          ),
-    .R              (1'b0          ),
-    .S              (1'b0          ),
-    .C              (clk_in        ),
-    .D1             (tx_fifo_i[m]  ),
-    .D2             (tx_fifo_q[m]  ),
-    .Q              (tx_data[m]    )
+    .DDR_CLK_EDGE   ("SAME_EDGE"   ), // "OPPOSITE_EDGE" or "SAME_EDGE"
+    .INIT           (1'b0          ), // Initial value of Q: 1'b0 or 1'b1
+    .SRTYPE         ("ASYNC"       )  // Set/Reset type: "SYNC" or "ASYNC"
+) u_tx_data_oddr (
+    .CE             (1'b1          ), // 1-bit clock enable input
+    .R              (1'b0          ), // 1-bit reset
+    .S              (1'b0          ), // 1-bit set
+    .C              (clk_in        ), // 1-bit clock input
+    .D1             (tx_fifo_i[mm] ), // 1-bit data input (positive edge)
+    .D2             (tx_fifo_q[mm] ), // 1-bit data input (negative edge)
+    .Q              (tx_data[mm]   )  // 1-bit DDR output
 );
 
 end

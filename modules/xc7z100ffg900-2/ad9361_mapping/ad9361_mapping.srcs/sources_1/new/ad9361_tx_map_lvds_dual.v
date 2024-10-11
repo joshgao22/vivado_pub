@@ -8,8 +8,7 @@
 // | |_| | (_) \__ \ | | | | |_| | (_| | (_) |
 //  \___/ \___/|___/_| |_|  \____|\__,_|\___/
 //
-// Create Date: 2023/03/05 23:21:27
-// Last Modified Date: 2023/03/06 11:01
+// Create Date: 09/27/2024 03:26:45 PM
 // Design Name:
 // Module Name: ad9361_tx_map_lvds_dual
 // Project Name:
@@ -47,34 +46,41 @@ module ad9361_tx_map_lvds_dual
     output  [ 5:0]  tx_data_n
 );
 
-genvar m;
+genvar mm;
 
 // input data fifo
-reg [1:0] tx_control_cnt = 'b0;
-reg rx_fifo_rd_en = 'b0;
+reg [1:0] tx_fifo_rd_en_cnt = 'b0;
+reg tx_fifo_rd_en = 'b0;
 wire [11:0] tx_fifo_ch1_i;
 wire [11:0] tx_fifo_ch1_q;
 wire [11:0] tx_fifo_ch2_i;
 wire [11:0] tx_fifo_ch2_q;
 
+wire rx_fifo_empty_1;
+wire rx_fifo_empty_2;
+wire rx_fifo_empty_3;
+wire rx_fifo_empty_4;
+
 always @(posedge clk_4x_in) begin
     if (clk_in_rst) begin
-        tx_control_cnt <= 'b0;
+        tx_fifo_rd_en_cnt <= 'b0;
     end
     else begin
-        tx_control_cnt <= tx_control_cnt + 1'b1;
+        tx_fifo_rd_en_cnt <= tx_fifo_rd_en_cnt + 1'b1;
     end
 end
 
 always @(posedge clk_4x_in) begin
     if (clk_in_rst) begin
-        rx_fifo_rd_en <= 'b0;
-    end
-    else if (tx_control_cnt == 2'd2) begin
-        rx_fifo_rd_en <= 1'b1;
+        tx_fifo_rd_en <= 'b0;
     end
     else begin
-        rx_fifo_rd_en <= 'b0;
+        if (&{~rx_fifo_empty_1, ~rx_fifo_empty_2, ~rx_fifo_empty_3, ~rx_fifo_empty_4}) begin
+            tx_fifo_rd_en <= (tx_fifo_rd_en_cnt == 2'd3) ? 1'b1 : 'b0;
+        end
+        else begin
+            tx_fifo_rd_en <= 'b0;
+        end
     end
 end
 
@@ -85,10 +91,10 @@ ad9361_fifo u_tx_fifo_ch1_i
     .rd_clk     (clk_4x_in      ), // input wire rd_clk
     .din        (tx_ch1_i       ), // input wire [11 : 0] din
     .wr_en      (1'b1           ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
+    .rd_en      (tx_fifo_rd_en  ), // input wire rd_en
     .dout       (tx_fifo_ch1_i  ), // output wire [11 : 0] dout
     .full       (               ), // output wire full
-    .empty      (               )  // output wire empty
+    .empty      (rx_fifo_empty_1)  // output wire empty
 );
 
 ad9361_fifo u_tx_fifo_ch1_q
@@ -98,10 +104,10 @@ ad9361_fifo u_tx_fifo_ch1_q
     .rd_clk     (clk_4x_in      ), // input wire rd_clk
     .din        (tx_ch1_q       ), // input wire [11 : 0] din
     .wr_en      (1'b1           ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
+    .rd_en      (tx_fifo_rd_en  ), // input wire rd_en
     .dout       (tx_fifo_ch1_q  ), // output wire [11 : 0] dout
     .full       (               ), // output wire full
-    .empty      (               )  // output wire empty
+    .empty      (rx_fifo_empty_2)  // output wire empty
 );
 
 ad9361_fifo u_tx_fifo_ch2_i
@@ -111,10 +117,10 @@ ad9361_fifo u_tx_fifo_ch2_i
     .rd_clk     (clk_4x_in      ), // input wire rd_clk
     .din        (tx_ch2_i       ), // input wire [11 : 0] din
     .wr_en      (1'b1           ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
+    .rd_en      (tx_fifo_rd_en  ), // input wire rd_en
     .dout       (tx_fifo_ch2_i  ), // output wire [11 : 0] dout
     .full       (               ), // output wire full
-    .empty      (               )  // output wire empty
+    .empty      (rx_fifo_empty_3)  // output wire empty
 );
 
 ad9361_fifo u_tx_fifo_ch2_q
@@ -124,57 +130,56 @@ ad9361_fifo u_tx_fifo_ch2_q
     .rd_clk     (clk_4x_in      ), // input wire rd_clk
     .din        (tx_ch2_q       ), // input wire [11 : 0] din
     .wr_en      (1'b1           ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
+    .rd_en      (tx_fifo_rd_en  ), // input wire rd_en
     .dout       (tx_fifo_ch2_q  ), // output wire [11 : 0] dout
     .full       (               ), // output wire full
-    .empty      (               )  // output wire empty
+    .empty      (rx_fifo_empty_4)  // output wire empty
 );
 
-
 // frame and data control
-reg tx_frame_r = 'b0; // rising edge data
-reg tx_frame_f = 'b0; // falling edge data
-reg [5:0] tx_data_r = 'b0;
-reg [5:0] tx_data_f = 'b0;
+reg tx_frame_i = 'b0;
+reg tx_frame_q = 'b0;
+reg [5:0] tx_buf_i = 'b0;
+reg [5:0] tx_buf_q = 'b0;
 
 always @(posedge clk_4x_in) begin
     if (clk_in_rst) begin
-        tx_frame_r <= 'b0;
-        tx_frame_f <= 'b0;
-        tx_data_r <= 'b0;
-        tx_data_f <= 'b0;
+        tx_frame_i <= 'b0;
+        tx_frame_q <= 'b0;
+        tx_buf_i <= 'b0;
+        tx_buf_q <= 'b0;
     end
     else begin
-        case (tx_control_cnt)
+        case (tx_fifo_rd_en_cnt)
             2'd0: begin
-                tx_frame_r <= 1'b1;
-                tx_frame_f <= 1'b1;
-                tx_data_r <= tx_fifo_ch1_i[11: 6];
-                tx_data_f <= tx_fifo_ch1_q[11: 6];
+                tx_frame_i <= 1'b1;
+                tx_frame_q <= 1'b1;
+                tx_buf_i <= tx_fifo_ch1_i[11:6];
+                tx_buf_q <= tx_fifo_ch1_q[11:6];
             end
             2'd1: begin
-                tx_frame_r <= 1'b1;
-                tx_frame_f <= 1'b1;
-                tx_data_r <= tx_fifo_ch1_i[5:0];
-                tx_data_f <= tx_fifo_ch1_q[5:0];
+                tx_frame_i <= 1'b1;
+                tx_frame_q <= 1'b1;
+                tx_buf_i <= tx_fifo_ch1_i[5:0];
+                tx_buf_q <= tx_fifo_ch1_q[5:0];
             end
             2'd2: begin
-                tx_frame_r <= 1'b0;
-                tx_frame_f <= 1'b0;
-                tx_data_r <= tx_fifo_ch2_i[11:6];
-                tx_data_f <= tx_fifo_ch2_q[11:6];
+                tx_frame_i <= 1'b0;
+                tx_frame_q <= 1'b0;
+                tx_buf_i <= tx_fifo_ch2_i[11:6];
+                tx_buf_q <= tx_fifo_ch2_q[11:6];
             end
             2'd3: begin
-                tx_frame_r <= 1'b0;
-                tx_frame_f <= 1'b0;
-                tx_data_r <= tx_fifo_ch2_i[5:0];
-                tx_data_f <= tx_fifo_ch2_q[5:0];
+                tx_frame_i <= 1'b0;
+                tx_frame_q <= 1'b0;
+                tx_buf_i <= tx_fifo_ch2_i[5:0];
+                tx_buf_q <= tx_fifo_ch2_q[5:0];
             end
             default: begin
-                tx_frame_r <= 'b0;
-                tx_frame_f <= 'b0;
-                tx_data_r <= 'b0;
-                tx_data_f <= 'b0;
+                tx_frame_i <= 'b0; // error
+                tx_frame_q <= 'b0; // error
+                tx_buf_i <= 'b0; // error
+                tx_buf_q <= 'b0; // error
             end
         endcase
     end
@@ -182,9 +187,10 @@ end
 
 // output clock to port
 wire clk_out;
+
 assign clk_out = clk_4x_in;
 
-OBUFDS u_obufds_clk_out
+OBUFDS u_clk_out_obufds
 (
     .I  (clk_out    ),
     .O  (clk_out_p  ),
@@ -192,6 +198,8 @@ OBUFDS u_obufds_clk_out
 );
 
 // output tx frame to port
+wire tx_frame;
+
 ODDR #(
     .DDR_CLK_EDGE   ("SAME_EDGE"    ),
     .INIT           (1'b0           ),
@@ -201,43 +209,43 @@ ODDR #(
     .R              (1'b0           ),
     .S              (1'b0           ),
     .C              (clk_4x_in      ),
-    .D1             (tx_frame_r     ),
-    .D2             (tx_frame_f     ),
+    .D1             (tx_frame_i     ),
+    .D2             (tx_frame_q     ),
     .Q              (tx_frame       )
 );
 
-OBUFDS u_obufds_tx_frame
+OBUFDS u_tx_frame_obufds
 (
-    .I  (tx_frame   ),
-    .O  (tx_frame_p ),
-    .OB (tx_frame_n )
+    .O  (tx_frame_p ), // Diff_p output (connect directly to top-level port)
+    .OB (tx_frame_n ), // Diff_n output (connect directly to top-level port)
+    .I  (tx_frame   )  // Buffer input
 );
 
-// output tx data to port
+// ouput tx data to port
 wire [5:0] tx_data;
 
 generate
-for (m=0; m<6; m=m+1) begin: tx_data_oddr
+for (mm = 0; mm < 6; mm = mm + 1) begin
 
 ODDR #(
     .DDR_CLK_EDGE   ("SAME_EDGE"   ),
     .INIT           (1'b0          ),
     .SRTYPE         ("ASYNC"       )
-) u_tx_data_oddr  (
+) u_tx_data_oddr (
     .CE             (1'b1          ),
     .R              (1'b0          ),
     .S              (1'b0          ),
     .C              (clk_4x_in     ),
-    .D1             (tx_data_r[m]  ),
-    .D2             (tx_data_f[m]  ),
-    .Q              (tx_data[m]    )
+    .D1             (tx_buf_i[mm]  ),
+    .D2             (tx_buf_q[mm]  ),
+    .Q              (tx_data[mm]   )
 );
 
-OBUFDS u_obufds_tx_data
+OBUFDS u_tx_data_obufds
 (
-    .I  (tx_data[m]     ),
-    .O  (tx_data_p[m]   ),
-    .OB (tx_data_n[m]   )
+    .O  (tx_data_p[mm]  ), // Diff_p output (connect directly to top-level port)
+    .OB (tx_data_n[mm]  ), // Diff_n output (connect directly to top-level port)
+    .I  (tx_data[mm]    )  // Buffer input
 );
 
 end

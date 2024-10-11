@@ -45,13 +45,14 @@ module ad9361_rx_map_cmos_dual
     output  [11:0]  rx_ch2_q
 );
 
-genvar          m;
+genvar mm;
 
 // rx data
-wire [11:0] rx_data_i, rx_data_q;
+wire [11:0] rx_data_pos;
+wire [11:0] rx_data_neg;
 
 generate
-for (m=0; m<12; m=m+1) begin : rx_data_iddr
+for (mm = 0; mm < 12; mm = mm + 1) begin
 
 IDDR #(
     .DDR_CLK_EDGE   ("SAME_EDGE"    ),
@@ -63,17 +64,17 @@ IDDR #(
     .R              (1'b0           ),
     .S              (1'b0           ),
     .C              (clk_2x_in      ),
-    .D              (rx_data[m]     ),
-    .Q1             (rx_data_q[m]   ),
-    .Q2             (rx_data_i[m]   )
+    .D              (rx_data[mm]    ),
+    .Q1             (rx_data_pos[mm]),
+    .Q2             (rx_data_neg[mm])
 );
 
 end
 endgenerate
 
 // rx frame
-wire        rx_frame_i;
-wire        rx_frame_q;
+wire rx_frame_pos;
+wire rx_frame_neg;
 
 IDDR #(
     .DDR_CLK_EDGE   ("SAME_EDGE"    ),
@@ -86,49 +87,52 @@ IDDR #(
     .S              (1'b0           ),
     .C              (clk_2x_in      ),
     .D              (rx_frame       ),
-    .Q1             (rx_frame_q     ),
-    .Q2             (rx_frame_i     )
+    .Q1             (rx_frame_pos   ),
+    .Q2             (rx_frame_neg   )
 );
 
 // divide rx_data to dual channel
-reg     [11:0]  rx1_data_i = 'b0;
-reg     [11:0]  rx1_data_q = 'b0;
-reg     [11:0]  rx2_data_i = 'b0;
-reg     [11:0]  rx2_data_q = 'b0;
+reg [11:0] rx1_data_i = 'b0;
+reg [11:0] rx1_data_q = 'b0;
+reg [11:0] rx2_data_i = 'b0;
+reg [11:0] rx2_data_q = 'b0;
 
-wire            rx_fifo_wr_en;
-reg             rx_fifo_rd_en = 'b0;
+reg rx_fifo_wr_en = 'b0;
+reg rx_fifo_rd_en = 'b0;
 
-wire            rx_fifo_empty_1;
-wire            rx_fifo_empty_2;
-wire            rx_fifo_empty_3;
-wire            rx_fifo_empty_4;
-
-assign rx_fifo_wr_en = rx_frame_i; // align data & write enable
+wire rx_fifo_empty_1;
+wire rx_fifo_empty_2;
+wire rx_fifo_empty_3;
+wire rx_fifo_empty_4;
 
 always @ (posedge clk_2x_in) begin
     if (clk_in_rst) begin
         rx1_data_i <= 'b0;
-        rx2_data_i <= 'b0;
-    end
-    else if(rx_frame_i) begin
-        rx1_data_i <= rx_data_i;
-    end
-    else begin
-        rx2_data_i <= rx_data_i;
-    end
-end
-
-always @ (posedge clk_2x_in) begin
-    if (clk_in_rst) begin
         rx1_data_q <= 'b0;
+        rx2_data_i <= 'b0;
         rx2_data_q <= 'b0;
+        rx_fifo_wr_en <= 'b0;
     end
-    else if(rx_frame_q) begin
-        rx1_data_q <= rx_data_q;
+    else if({rx_frame_neg,rx_frame_pos} == 2'b11) begin
+        rx1_data_i <= rx_data_neg;
+        rx1_data_q <= rx_data_pos;
+        rx2_data_i <= rx2_data_i;
+        rx2_data_q <= rx2_data_q;
+        rx_fifo_wr_en <= 'b0;
+    end
+    else if({rx_frame_neg,rx_frame_pos} == 2'b00) begin
+        rx1_data_i <= rx1_data_i;
+        rx1_data_q <= rx1_data_q;
+        rx2_data_i <= rx_data_neg;
+        rx2_data_q <= rx_data_pos;
+        rx_fifo_wr_en <= 'b1;
     end
     else begin
-        rx2_data_q <= rx_data_q;
+        rx1_data_i <= 'd1234; // error
+        rx1_data_q <= 'd4321; // error
+        rx2_data_i <= 'd5678; // error
+        rx2_data_q <= 'd8765; // error
+        rx_fifo_wr_en <= 'b0;
     end
 end
 
@@ -143,54 +147,54 @@ end
 
 ad9361_fifo u_rx_fifo_ch1_i
 (
-    .rst        (rx_fifo_rst    ), // input wire rst
-    .wr_clk     (clk_2x_in      ), // input wire wr_clk
-    .rd_clk     (rx_data_clk    ), // input wire rd_clk
-    .din        (rx1_data_i     ), // input wire [11 : 0] din
-    .wr_en      (rx_fifo_wr_en  ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
-    .dout       (rx_ch1_i       ), // output wire [11 : 0] dout
-    .full       (               ), // output wire full
-    .empty      (rx_fifo_empty_1)  // output wire empty
+    .rst        (clk_in_rst || rx_fifo_rst  ), // input wire rst
+    .wr_clk     (clk_2x_in                  ), // input wire wr_clk
+    .rd_clk     (rx_data_clk                ), // input wire rd_clk
+    .din        (rx1_data_i                 ), // input wire [11 : 0] din
+    .wr_en      (rx_fifo_wr_en              ), // input wire wr_en
+    .rd_en      (rx_fifo_rd_en              ), // input wire rd_en
+    .dout       (rx_ch1_i                   ), // output wire [11 : 0] dout
+    .full       (                           ), // output wire full
+    .empty      (rx_fifo_empty_1            )  // output wire empty
 );
 
 ad9361_fifo u_rx_fifo_ch1_q
 (
-    .rst        (rx_fifo_rst    ), // input wire rst
-    .wr_clk     (clk_2x_in      ), // input wire wr_clk
-    .rd_clk     (rx_data_clk    ), // input wire rd_clk
-    .din        (rx1_data_q     ), // input wire [11 : 0] din
-    .wr_en      (rx_fifo_wr_en  ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
-    .dout       (rx_ch1_q       ), // output wire [11 : 0] dout
-    .full       (               ), // output wire full
-    .empty      (rx_fifo_empty_2)  // output wire empty
+    .rst        (clk_in_rst || rx_fifo_rst  ), // input wire rst
+    .wr_clk     (clk_2x_in                  ), // input wire wr_clk
+    .rd_clk     (rx_data_clk                ), // input wire rd_clk
+    .din        (rx1_data_q                 ), // input wire [11 : 0] din
+    .wr_en      (rx_fifo_wr_en              ), // input wire wr_en
+    .rd_en      (rx_fifo_rd_en              ), // input wire rd_en
+    .dout       (rx_ch1_q                   ), // output wire [11 : 0] dout
+    .full       (                           ), // output wire full
+    .empty      (rx_fifo_empty_2            )  // output wire empty
 );
 
 ad9361_fifo u_rx_fifo_ch2_i
 (
-    .rst        (rx_fifo_rst    ), // input wire rst
-    .wr_clk     (clk_2x_in      ), // input wire wr_clk
-    .rd_clk     (rx_data_clk    ), // input wire rd_clk
-    .din        (rx2_data_i     ), // input wire [11 : 0] din
-    .wr_en      (rx_fifo_wr_en  ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
-    .dout       (rx_ch2_i       ), // output wire [11 : 0] dout
-    .full       (               ), // output wire full
-    .empty      (rx_fifo_empty_3)  // output wire empty
+    .rst        (clk_in_rst || rx_fifo_rst  ), // input wire rst
+    .wr_clk     (clk_2x_in                  ), // input wire wr_clk
+    .rd_clk     (rx_data_clk                ), // input wire rd_clk
+    .din        (rx2_data_i                 ), // input wire [11 : 0] din
+    .wr_en      (rx_fifo_wr_en              ), // input wire wr_en
+    .rd_en      (rx_fifo_rd_en              ), // input wire rd_en
+    .dout       (rx_ch2_i                   ), // output wire [11 : 0] dout
+    .full       (                           ), // output wire full
+    .empty      (rx_fifo_empty_3            )  // output wire empty
 );
 
 ad9361_fifo u_rx_fifo_ch2_q
 (
-    .rst        (rx_fifo_rst    ), // input wire rst
-    .wr_clk     (clk_2x_in      ), // input wire wr_clk
-    .rd_clk     (rx_data_clk    ), // input wire rd_clk
-    .din        (rx2_data_q     ), // input wire [11 : 0] din
-    .wr_en      (rx_fifo_wr_en  ), // input wire wr_en
-    .rd_en      (rx_fifo_rd_en  ), // input wire rd_en
-    .dout       (rx_ch2_q       ), // output wire [11 : 0] dout
-    .full       (               ), // output wire full
-    .empty      (rx_fifo_empty_4)  // output wire empty
+    .rst        (clk_in_rst || rx_fifo_rst  ), // input wire rst
+    .wr_clk     (clk_2x_in                  ), // input wire wr_clk
+    .rd_clk     (rx_data_clk                ), // input wire rd_clk
+    .din        (rx2_data_q                 ), // input wire [11 : 0] din
+    .wr_en      (rx_fifo_wr_en              ), // input wire wr_en
+    .rd_en      (rx_fifo_rd_en              ), // input wire rd_en
+    .dout       (rx_ch2_q                   ), // output wire [11 : 0] dout
+    .full       (                           ), // output wire full
+    .empty      (rx_fifo_empty_4            )  // output wire empty
 );
 
 endmodule
