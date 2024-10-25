@@ -1,0 +1,228 @@
+/*****************************************************************************/
+/**
+ * Description: Global configurations.
+ *
+ * Date: 2021-04-28 13:19
+ * Last Editors: Fan Hao
+ * Last Edit Time: [2022-05-23 20:32]
+ *
+ * Revisions: Rev 0.0
+ * History:
+ * [2021-04-28]: Initial edition.
+ *
+ * Copyright(c) 2024 Beijing Institute of Technology.
+ * Lab of Communication and Networking
+ *
+ ******************************************************************************/
+
+#ifndef __APP_CONFIG_H_
+#define __APP_CONFIG_H_
+
+#define XILINX_PLATFORM
+
+#include "xparameters.h"
+
+/******** Software Version ********/
+#define _APP_VER 0x00010000
+
+#define _APP_VER_MAIN ((_APP_VER & 0xFF000000) >> 24)
+#define _APP_VER_MINOR ((_APP_VER & 0x00FF0000) >> 16)
+#define _APP_VER_PATCH (_APP_VER & 0x0000FFFF)
+
+/*********** Debug Info Level ************/
+//  #define _DEBUG_LEVEL 1
+// 3 - print all debug info
+// 2 - print warnings and errors
+// 1 - print only errors
+// other - print nothing
+
+#define DATALINK_ENABLE_AUTORECONNECT
+#define DATALINK_ENABLE_AUTOTIMESYNC
+// #define DATALINK_ENABLE_BERTEST
+
+/************ Hardware Configs ************/
+#define CPU_CLK_HZ XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ
+#define GLOBAL_TIMER_CLK_HZ (CPU_CLK_HZ / 2)
+#define SCU_TIMER_CLK_HZ (CPU_CLK_HZ / 2)
+#define FCLK_CLK0_HZ 100000000
+
+/********* Zynq Platform Configs **********/
+// SCU Timer (for logging)
+#define SCUTIMER_DEVICE_ID XPAR_PS7_SCUTIMER_0_DEVICE_ID
+#define SCUTIMER_INTR_ID XPAR_SCUTIMER_INTR
+
+// Physical Layer Configs
+#define PHY_DEVICE_ID (0x01 | 0x00)
+#define PHY_BASEADDR XPAR_PHYC_BASEADDR
+#define PHY_BEAM_FORMING_ENABLE
+// -- Antenna Bram Configs
+#define PHY_ANTCONFIG_BRAM_DEVICE_ID XPAR_PHY_DATA_INTERFACE_ANT_CONFIG_BRAM_CTRL_DEVICE_ID
+#define PHY_ANTINFO_BRAM_DEVICE_ID XPAR_PHY_DATA_INTERFACE_ANT_BEAM_BRAM_CTRL_DEVICE_ID
+// -- Buffers
+#define PHY_TXBUFF_BRAM_DEVICE_ID XPAR_PHY_DATA_INTERFACE_TX_FRAME_BRAM_CTRL_DEVICE_ID
+#define PHY_RXBUFF_BRAM_DEVICE_ID XPAR_PHY_DATA_INTERFACE_RX_FRAME_BRAM_CTRL_DEVICE_ID
+// -- Xadc
+#define PHY_HW_XADC_DEVICE_ID XPAR_PS7_XADC_0_DEVICE_ID
+// -- Interrupt id
+#define PHY_INTR_ID XPAR_FABRIC_PHY_IRQ_INTR
+#define PERIODIC_5MS_INTR_ID XPAR_FABRIC_PHY_5MS_DELAY_2MS_INTR
+
+// Time Controller Configs
+#define TIME_CONTROLLER_BASEADDR XPAR_TMC_BASEADDR
+
+// System Bus Configs
+#define SYSBUS_BASE_ADDR XPAR_SYSTEMBUS_BASEADDR
+#define SYSBUS_TX_INTR_ID XPAR_FABRIC_SYSTEMBUS_TX_DONE_INTR
+#define SYSBUS_RX_INTR_ID XPAR_FABRIC_SYSTEMBUS_RX_DONE_INTR
+
+// Global Timer config
+#define GLOBAL_TIMER_DEVICE_ID XPAR_GLOBAL_TMR_DEVICE_ID
+#define GLOBAL_TIMER_BASEADDR XPAR_GLOBAL_TMR_BASEADDR
+#define GLOBAL_TIMER_INTR_ID XPAR_GLOBAL_TMR_INTR
+
+// INTC configis
+#define INTC_DEVICE_ID XPAR_SCUGIC_0_DEVICE_ID
+
+// AD9361 Configuration
+#define AD9361
+#ifdef AD9361
+#define AD9361_REG
+//#define AD9361_API
+#define SPI_INTERFACE_SPI_ENGINE
+#define HAVE_SPLIT_GAIN_TABLE 1 /* only set to 0 in case split_gain_table_mode_enable = 0*/
+#define HAVE_TDD_SYNTH_TABLE 1	/* only set to 0 in case split_gain_table_mode_enable = 0*/
+#define AD9361_DEVICE 1			/* set it 1 if AD9361 device is used, 0 otherwise */
+#define AD9364_DEVICE 0			/* set it 1 if AD9364 device is used, 0 otherwise */
+#define AD9363A_DEVICE 0		/* set it 1 if AD9363A device is used, 0 otherwise */
+#define HAVE_VERBOSE_MESSAGES	/* Recommended during development prints errors and warnings */
+// #define HAVE_DEBUG_MESSAGES /* For Debug purposes only */
+// AD9361 GPIO Configurations
+#define AD9361_GPIO_DEVICE_ID 0
+#define AD9361_GPIO_OFFSET 54
+#define AD9361_GPIO_INPUT 0
+#define AD9361_GPIO_OUTPUT 1
+#define AD9361_GPIO_DISABLE 0
+#define AD9361_GPIO_ENABLE 1
+// -- AD9361-1 SPI Engine Configuration
+#define AD9361_SPI_DEVICE_ID 0
+#define AD9361_SPI_ENGINE_REF_CLK FCLK_CLK0_HZ
+#define AD9361_SPI_ENGINE_MAX_SPEED 5000000
+#define AD9361_SPI_ENGINE_BASEADDR XPAR_AXI_SPI_ENGINE_AXI_SPI_ENGINE_BASEADDR
+#define AD9361_SPI_ENGINE_DATA_WIDTH 8
+#define AD9361_SPI_ENGINE_CS_DELAY 3
+#define AD9361_TIMEOUT_TH 2000
+#define AD9361_1_SPI_CS 0x01
+#define AD9361_2_SPI_CS 0x02
+#define AD9361_2_TIMEOUT_TH 2000
+// -- AD9361-1 GPIO
+#define AD9361_1_TXNRX (AD9361_GPIO_OFFSET + 4)
+#define AD9361_1_ENABLE (AD9361_GPIO_OFFSET + 5)
+#define AD9361_1_EN_AGC (AD9361_GPIO_OFFSET + 6)
+#define AD9361_1_RESET_B (AD9361_GPIO_OFFSET + 7)
+#define AD9361_1_CTRL_OUT0 (AD9361_GPIO_OFFSET + 8)
+#define AD9361_1_CTRL_OUT1 (AD9361_GPIO_OFFSET + 9)
+#define AD9361_1_CTRL_OUT2 (AD9361_GPIO_OFFSET + 10)
+#define AD9361_1_CTRL_OUT3 (AD9361_GPIO_OFFSET + 11)
+#define AD9361_1_CTRL_OUT4 (AD9361_GPIO_OFFSET + 12)
+#define AD9361_1_CTRL_OUT5 (AD9361_GPIO_OFFSET + 13)
+#define AD9361_1_CTRL_OUT6 (AD9361_GPIO_OFFSET + 14)
+#define AD9361_1_CTRL_OUT7 (AD9361_GPIO_OFFSET + 15)
+#define AD9361_1_CTRL_IN0 (AD9361_GPIO_OFFSET + 16)
+#define AD9361_1_CTRL_IN1 (AD9361_GPIO_OFFSET + 17)
+#define AD9361_1_CTRL_IN2 (AD9361_GPIO_OFFSET + 18)
+#define AD9361_1_CTRL_IN3 (AD9361_GPIO_OFFSET + 19)
+// -- AD9361-2 GPIO
+#define AD9361_2_TXNRX (AD9361_GPIO_OFFSET + 20)
+#define AD9361_2_ENABLE (AD9361_GPIO_OFFSET + 21)
+#define AD9361_2_EN_AGC (AD9361_GPIO_OFFSET + 22)
+#define AD9361_2_RESET_B (AD9361_GPIO_OFFSET + 23)
+#define AD9361_2_CTRL_OUT0 (AD9361_GPIO_OFFSET + 24)
+#define AD9361_2_CTRL_OUT1 (AD9361_GPIO_OFFSET + 25)
+#define AD9361_2_CTRL_OUT2 (AD9361_GPIO_OFFSET + 26)
+#define AD9361_2_CTRL_OUT3 (AD9361_GPIO_OFFSET + 27)
+#define AD9361_2_CTRL_OUT4 (AD9361_GPIO_OFFSET + 28)
+#define AD9361_2_CTRL_OUT5 (AD9361_GPIO_OFFSET + 29)
+#define AD9361_2_CTRL_OUT6 (AD9361_GPIO_OFFSET + 30)
+#define AD9361_2_CTRL_OUT7 (AD9361_GPIO_OFFSET + 31)
+#define AD9361_2_CTRL_IN0 (AD9361_GPIO_OFFSET + 32)
+#define AD9361_2_CTRL_IN1 (AD9361_GPIO_OFFSET + 33)
+#define AD9361_2_CTRL_IN2 (AD9361_GPIO_OFFSET + 34)
+#define AD9361_2_CTRL_IN3 (AD9361_GPIO_OFFSET + 35)
+
+typedef enum
+{
+	TX_FREQ_125,
+	TX_FREQ_126,
+	TX_FREQ_4125
+} ad9361TxFreq;
+#endif
+
+// HMC7044 Configurations
+//#define HMC7044
+#ifdef HMC7044
+#define HMC7044_GPIO_DEVICE_ID 0
+#define HMC7044_GPIO_OFFSET 54
+#define HMC7044_RESET (HMC7044_GPIO_OFFSET + 0)
+#define HMC7044_SYNC (HMC7044_GPIO_OFFSET + 1)
+#define HMC7044_GPIO_0 (HMC7044_GPIO_OFFSET + 2)
+#define HMC7044_GPIO_1 (HMC7044_GPIO_OFFSET + 3)
+#define HMC7044_GPIO_2 (HMC7044_GPIO_OFFSET + 4)
+#define HMC7044_GPIO_3 (HMC7044_GPIO_OFFSET + 5)
+// -- HMC7044 SPI Engine Configuration
+#define HMC7044_SPI_DEVICE_ID 0
+#define HMC7044_SPI_ENGINE_REF_CLK FCLK_CLK0_HZ
+#define HMC7044_SPI_ENGINE_MAX_SPEED 5000000
+#define HMC7044_SPI_ENGINE_BASEADDR XPAR_AXI_SPI_ENGINE_AXI_SPI_ENGINE_BASEADDR
+#define HMC7044_SPI_ENGINE_DATA_WIDTH 8
+#define HMC7044_SPI_ENGINE_CS_DELAY 3
+#define HMC7044_SPI_CS 0x00
+#endif
+
+// AD9528 Configurations
+#define AD9528
+#ifdef AD9528
+#define AD9528_GPIO_DEVICE_ID 0
+#define AD9528_GPIO_OFFSET 54
+#define AD9528_RESETB (AD9528_GPIO_OFFSET+0)
+#define AD9528_SYSREF_REQ (AD9528_GPIO_OFFSET+1)
+#define AD9528_STATUS_0 (AD9528_GPIO_OFFSET+2)
+#define AD9528_STATUS_1 (AD9528_GPIO_OFFSET+3)
+// -- AD9528 SPI Engine Configuration
+#define AD9528_SPI_DEVICE_ID 0
+#define AD9528_SPI_ENGINE_REF_CLK FCLK_CLK0_HZ
+#define AD9528_SPI_ENGINE_MAX_SPEED 5000000
+#define AD9528_SPI_ENGINE_BASEADDR XPAR_AXI_SPI_ENGINE_AXI_SPI_ENGINE_BASEADDR
+#define AD9528_SPI_ENGINE_DATA_WIDTH 8
+#define AD9528_SPI_ENGINE_CS_DELAY 3
+#define AD9528_SPI_CS 0x00
+#endif
+
+// AD9653 Configurations
+#define AD9653
+#ifdef AD9653
+#define AD9653_GPIO_DEVICE_ID 0
+#define AD9653_GPIO_OFFSET 54
+#define AD9653_POWR_DOWN (AD9653_GPIO_OFFSET+0)
+// -- AD9528 SPI Engine Configuration
+#define AD9653_SPI_DEVICE_ID 0
+#define AD9653_SPI_ENGINE_REF_CLK FCLK_CLK0_HZ
+#define AD9653_SPI_ENGINE_MAX_SPEED 5000000
+#define AD9653_SPI_ENGINE_BASEADDR XPAR_AXI_SPI_ENGINE_AXI_SPI_ENGINE_BASEADDR
+#define AD9653_SPI_ENGINE_DATA_WIDTH 8
+#define AD9653_SPI_ENGINE_CS_DELAY 3
+#define AD9653_SPI_CS 0x03
+#endif
+
+// Configuration Check
+#if defined(PHY_BEAM_SET_PRESET) && !defined(PHY_BEAM_FORMING_ENABLE)
+#define PHY_BEAM_FORMING_ENABLE
+#warning To impliment beam scan must enable beam forming...
+#endif
+
+#if defined(DATALINK_ENABLE_BERTEST)
+#if !defined(DATALINK_ENABLE_AUTOTIMESYNC)
+#warning To enbale bit error rate test, auto time-sync should be enabled...
+#endif
+#endif
+
+#endif //__APP_CONFIG_H_

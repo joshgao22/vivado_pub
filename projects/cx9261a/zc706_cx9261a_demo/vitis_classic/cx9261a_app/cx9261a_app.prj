@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="cx9261a_app" location="/home/josh/Workspace/vivado/vivado_pub/projects/cx9261a/zc706_cx9261a_demo/vitis_classic/cx9261a_app" platform="/home/josh/Workspace/vivado/vivado_pub/projects/cx9261a/zc706_cx9261a_demo/vitis_classic/cx9261a_platform/export/cx9261a_platform/cx9261a_platform.xpfm" platformUID="xilinx:zc706::0.0(custom)" systemProject="cx9261a_app_system" sysConfig="cx9261a_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" language="CPP" mssSignature="bc17e5d70c87e6a7f92b2333eecd1dbf">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1979421842">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1480550519" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
