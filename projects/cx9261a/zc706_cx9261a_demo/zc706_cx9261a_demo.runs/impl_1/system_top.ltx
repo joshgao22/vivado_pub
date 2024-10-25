@@ -1,0 +1,1466 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "159999998"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "u_ila_trx1",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "4B0648EEAA8657BE89CDBEAA67057D4B",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "data_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "rx1_data_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx1_data_i[11]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[10]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[9]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[8]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[7]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[6]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[5]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[4]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[3]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[2]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[1]"
+                                            },
+                                            {
+                                                "name": "rx1_data_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "rx1_data_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx1_data_q[11]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[10]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[9]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[8]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[7]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[6]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[5]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[4]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[3]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[2]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[1]"
+                                            },
+                                            {
+                                                "name": "rx1_data_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "data_ready",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "tx1_data_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "tx1_data_i[11]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[10]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[9]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[8]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[7]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[6]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[5]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[4]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[3]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[2]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[1]"
+                                            },
+                                            {
+                                                "name": "tx1_data_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "tx1_data_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "tx1_data_q[11]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[10]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[9]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[8]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[7]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[6]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[5]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[4]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[3]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[2]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[1]"
+                                            },
+                                            {
+                                                "name": "tx1_data_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "u_ila_trx2",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "DB81E20588845620929226B20A3B4A70",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "data_valid2",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "rx2_data_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx2_data_i[11]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[10]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[9]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[8]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[7]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[6]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[5]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[4]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[3]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[2]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[1]"
+                                            },
+                                            {
+                                                "name": "rx2_data_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "rx2_data_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx2_data_q[11]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[10]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[9]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[8]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[7]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[6]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[5]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[4]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[3]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[2]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[1]"
+                                            },
+                                            {
+                                                "name": "rx2_data_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "data_ready2",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "tx2_data_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "tx2_data_i[11]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[10]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[9]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[8]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[7]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[6]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[5]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[4]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[3]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[2]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[1]"
+                                            },
+                                            {
+                                                "name": "tx2_data_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "tx2_data_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "tx2_data_q[11]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[10]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[9]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[8]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[7]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[6]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[5]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[4]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[3]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[2]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[1]"
+                                            },
+                                            {
+                                                "name": "tx2_data_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "u_ila_trx3",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 2,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "0D5A8EB785655E388434B8D306D5B306",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "data_valid3",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "rx3_data_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx3_data_i[11]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[10]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[9]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[8]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[7]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[6]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[5]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[4]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[3]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[2]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[1]"
+                                            },
+                                            {
+                                                "name": "rx3_data_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "rx3_data_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx3_data_q[11]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[10]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[9]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[8]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[7]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[6]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[5]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[4]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[3]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[2]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[1]"
+                                            },
+                                            {
+                                                "name": "rx3_data_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_mclk_delay/mclk_delay",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 3,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "2DE1225B64E851E3B916B773749A598D",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 15,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE0[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 16,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 17,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_CURVALUE2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 18,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE0[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 19,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 20,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 4,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2[4]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2[3]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2[2]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2[1]"
+                                            },
+                                            {
+                                                "name": "u_mclk_delay/MCLK_DELAY_SETVALUE2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio_hop_int",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 4,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "72FCB788790F5E07BEE4653694C9B105",
+                        "pins": [
+                            {
+                                "name": "probe_out0",
+                                "id": 21,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "hop_int",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "hop_int[31]"
+                                            },
+                                            {
+                                                "name": "hop_int[30]"
+                                            },
+                                            {
+                                                "name": "hop_int[29]"
+                                            },
+                                            {
+                                                "name": "hop_int[28]"
+                                            },
+                                            {
+                                                "name": "hop_int[27]"
+                                            },
+                                            {
+                                                "name": "hop_int[26]"
+                                            },
+                                            {
+                                                "name": "hop_int[25]"
+                                            },
+                                            {
+                                                "name": "hop_int[24]"
+                                            },
+                                            {
+                                                "name": "hop_int[23]"
+                                            },
+                                            {
+                                                "name": "hop_int[22]"
+                                            },
+                                            {
+                                                "name": "hop_int[21]"
+                                            },
+                                            {
+                                                "name": "hop_int[20]"
+                                            },
+                                            {
+                                                "name": "hop_int[19]"
+                                            },
+                                            {
+                                                "name": "hop_int[18]"
+                                            },
+                                            {
+                                                "name": "hop_int[17]"
+                                            },
+                                            {
+                                                "name": "hop_int[16]"
+                                            },
+                                            {
+                                                "name": "hop_int[15]"
+                                            },
+                                            {
+                                                "name": "hop_int[14]"
+                                            },
+                                            {
+                                                "name": "hop_int[13]"
+                                            },
+                                            {
+                                                "name": "hop_int[12]"
+                                            },
+                                            {
+                                                "name": "hop_int[11]"
+                                            },
+                                            {
+                                                "name": "hop_int[10]"
+                                            },
+                                            {
+                                                "name": "hop_int[9]"
+                                            },
+                                            {
+                                                "name": "hop_int[8]"
+                                            },
+                                            {
+                                                "name": "hop_int[7]"
+                                            },
+                                            {
+                                                "name": "hop_int[6]"
+                                            },
+                                            {
+                                                "name": "hop_int[5]"
+                                            },
+                                            {
+                                                "name": "hop_int[4]"
+                                            },
+                                            {
+                                                "name": "hop_int[3]"
+                                            },
+                                            {
+                                                "name": "hop_int[2]"
+                                            },
+                                            {
+                                                "name": "hop_int[1]"
+                                            },
+                                            {
+                                                "name": "hop_int[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio_manual_ctrl_1",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 5,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "3A4AD62DDC3A546EB5F2A986B350E154",
+                        "pins": [
+                            {
+                                "name": "probe_out0",
+                                "id": 22,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "waveform_sel_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "waveform_sel_1[1]"
+                                            },
+                                            {
+                                                "name": "waveform_sel_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 23,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "sweep_on_1",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 24,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "freq_set_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "freq_set_1[31]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[30]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[29]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[28]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[27]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[26]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[25]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[24]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[23]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[22]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[21]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[20]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[19]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[18]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[17]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[16]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[15]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[14]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[13]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[12]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[11]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[10]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[9]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[8]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[7]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[6]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[5]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[4]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[3]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[2]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[1]"
+                                            },
+                                            {
+                                                "name": "freq_set_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out3",
+                                "id": 25,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "iq_sel_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "iq_sel_1[1]"
+                                            },
+                                            {
+                                                "name": "iq_sel_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out4",
+                                "id": 26,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "bb_rshift_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "bb_rshift_1[3]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_1[2]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_1[1]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio_manual_ctrl_2",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 6,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "09D2047C4D375ED8AEA61ABD4F4AF334",
+                        "pins": [
+                            {
+                                "name": "probe_out0",
+                                "id": 27,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "waveform_sel_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "waveform_sel_2[1]"
+                                            },
+                                            {
+                                                "name": "waveform_sel_2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 28,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "sweep_on_2",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 29,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "freq_set_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "freq_set_2[31]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[30]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[29]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[28]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[27]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[26]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[25]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[24]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[23]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[22]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[21]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[20]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[19]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[18]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[17]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[16]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[15]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[14]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[13]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[12]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[11]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[10]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[9]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[8]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[7]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[6]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[5]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[4]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[3]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[2]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[1]"
+                                            },
+                                            {
+                                                "name": "freq_set_2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out3",
+                                "id": 30,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "iq_sel_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "iq_sel_2[1]"
+                                            },
+                                            {
+                                                "name": "iq_sel_2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out4",
+                                "id": 31,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "bb_rshift_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "bb_rshift_2[3]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_2[2]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_2[1]"
+                                            },
+                                            {
+                                                "name": "bb_rshift_2[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port s_axi -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
+preplace port s_axi_aclk -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace port s_axi_aresetn -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace port spi_clk -pg 1 -lvl 0 -x -10 -y 120 -defaultsOSRD
+preplace port irq -pg 1 -lvl 3 -x 540 -y 10 -defaultsOSRD
+preplace port spi -pg 1 -lvl 3 -x 540 -y 80 -defaultsOSRD
+preplace port active -pg 1 -lvl 3 -x 540 -y 100 -defaultsOSRD
+preplace inst axi_spi_engine -pg 1 -lvl 1 -x 150 -y 90 -defaultsOSRD
+preplace inst spi_engine_execution -pg 1 -lvl 2 -x 410 -y 90 -defaultsOSRD
+preplace netloc s_axi_aclk_0_1 1 0 1 N 80
+preplace netloc s_axi_aresetn_0_1 1 0 1 N 100
+preplace netloc spi_clk_0_1 1 0 2 10 180 300
+preplace netloc axi_spi_engine_spi_resetn 1 1 1 N 110
+preplace netloc spi_engine_execution_active 1 2 1 N 100
+preplace netloc axi_spi_engine_irq 1 1 2 290J 10 NJ
+preplace netloc axi_spi_engine_spi_engine_ctrl 1 1 1 N 70
+preplace netloc Conn1 1 0 1 N 60
+preplace netloc Conn2 1 2 1 N 80
+levelinfo -pg 1 -10 150 410 540
+pagesize -pg 1 -db -bbox -sgen -180 -10 650 190
+"
+}
+
