@@ -123,7 +123,9 @@ assign cx9261a_mclk_delay_ctrl1 = gpio_o[13];
 assign cx9261a_mclk_delay_ctrl2 = gpio_o[14];
 assign hop_en                   = gpio_o[15];
 
-assign gpio_i[31:16] = gpio_o[31:16];
+assign gpio_i[16] = gpio_hop_flag;
+
+assign gpio_i[31:17] = gpio_o[31:17];
 
 // spi interface
 wire            spi_sclk      ;
@@ -174,7 +176,6 @@ system_bd_wrapper system_bd
     .gpio_i             (gpio_i                     ), // input [31:0]gpio_i
     .gpio_o             (gpio_o                     ), // output [31:0]gpio_o
     .gpio_t             (gpio_t                     ), // output [31:0]gpio_t
-    .gpio_hop_tri_i     (gpio_hop_flag              ), // input [0:0]gpio_hop_tri_i
 
     // spi interface
     .spi_sclk           (spi_sclk                   ), // output spi_sclk

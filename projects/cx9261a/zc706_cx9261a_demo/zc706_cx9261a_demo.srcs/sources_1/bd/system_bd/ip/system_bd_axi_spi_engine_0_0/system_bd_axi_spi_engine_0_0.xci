@@ -109,7 +109,7 @@
           "parameters": {
             "DATA_WIDTH": [ { "value": "32", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "is_static_object": false } ],
-            "FREQ_HZ": [ { "value": "50000000", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "5e+07", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "ID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "ADDR_WIDTH": [ { "value": "16", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
@@ -133,8 +133,8 @@
             "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "auto", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "PHASE": [ { "value": "0.000", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "system_bd_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_static_object": false } ],
-            "NUM_READ_THREADS": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "NUM_WRITE_THREADS": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "NUM_READ_THREADS": [ { "value": "4", "value_src": "constant_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "NUM_WRITE_THREADS": [ { "value": "4", "value_src": "constant_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "RUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "WUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
@@ -215,7 +215,7 @@
           "parameters": {
             "ASSOCIATED_BUSIF": [ { "value": "spi_engine_ctrl", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "ASSOCIATED_RESET": [ { "value": "spi_resetn", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "50000000", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "5e+07", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "PHASE": [ { "value": "0.000", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "system_bd_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
@@ -243,7 +243,7 @@
           "parameters": {
             "ASSOCIATED_BUSIF": [ { "value": "spi_engine_offload_ctrl0:s_axi", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "ASSOCIATED_RESET": [ { "value": "s_axi_aresetn", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "50000000", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "5e+07", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "PHASE": [ { "value": "0.000", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "system_bd_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]

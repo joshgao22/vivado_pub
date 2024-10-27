@@ -143,7 +143,7 @@
           "parameters": {
             "ASSOCIATED_BUSIF": [ { "value": "spi", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "ASSOCIATED_RESET": [ { "value": "resetn", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "50000000", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "5e+07", "value_src": "user_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
             "PHASE": [ { "value": "0.000", "value_permission": "bd_and_user", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "system_bd_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd_and_user", "resolve_type": "generated", "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
